@@ -8,6 +8,10 @@
   --muted: #6b655e;
   --line:  #e3ddd5;
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
 
 /* ============================================
    2. NOLLSTÄLLNING
@@ -28,13 +32,68 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
+/* ============================================
+   3b. NAVIGATION
+   ============================================ */
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--sand);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 20px 24px;
+}
+
+.nav-name {
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+}
+
+.nav-links a.nav-contact {
+  background-color: var(--ink);
+  color: var(--white);
+  padding: 8px 18px;
+  border-radius: 999px;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a.nav-contact:hover {
+  color: var(--white);
+  opacity: 0.85;
+}
 
 /* ============================================
    4. HERO
    ============================================ */
 .hero {
   background-color: var(--sand);
-  padding: 120px 24px;
+  padding: 96px 24px 120px;
   text-align: center;
 }
 
@@ -60,21 +119,6 @@ body {
   color: var(--muted);
   max-width: 460px;
   margin: 0 auto 40px;
-}
-
-.hero-button {
-  display: inline-block;
-  background-color: var(--ink);
-  color: var(--white);
-  text-decoration: none;
-  padding: 14px 32px;
-  border-radius: 6px;
-  font-weight: 500;
-  transition: opacity 0.2s ease;
-}
-
-.hero-button:hover {
-  opacity: 0.85;
 }
 
 /* ============================================
