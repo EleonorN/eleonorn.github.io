@@ -104,7 +104,13 @@ body.wine-page .wine-app-inner {
   padding-top: 96px;
 }
 
-/* Try it-sektionen på startsidan */
+/* API demo-sektionen på startsidan */
+
+/* Drar ihop luften mot case-korten ovanför */
+.try-it {
+  padding-top: 56px;
+}
+
 .try-it-intro {
   max-width: 640px;
   margin: 0 0 32px;
