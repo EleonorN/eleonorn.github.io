@@ -1,0 +1,141 @@
+import { load } from 'cheerio';
+import { writeFileSync } from 'fs';
+
+const baseUrl = 'https://www.allabolag.se/bransch-sök?q=Ridsport';
+const pages = [
+  'https://www.allabolag.se/bransch-sök?q=Ridsport',
+  'https://www.allabolag.se/bransch-sök?q=Ridsport&page=2',
+  'https://www.allabolag.se/bransch-sök?q=Ridsport&page=3',
+  'https://www.allabolag.se/bransch-sök?q=Ridsport&page=4',
+  'https://www.allabolag.se/bransch-sök?q=Ridsport&page=5'
+];
+
+const userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36';
+
+// Konfiguration för proxy (lätt att utöka senare)
+const proxyConfig = {
+  useProxy: false,
+  proxyUrl: null // Sätt detta till proxy-URL om useProxy är true
+};
+
+// Funktion för att hämta sida med proxy-stöd
+async function fetchPage(url) {
+  const headers = {
+    'User-Agent': userAgent,
+    'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate'
+  };
+
+  // Här kan proxy-logik läggas in senare om det behövs
+  return fetch(url, {
+    headers,
+    cache: 'no-store'
+  });
+}
+
+// Vänta i millisekunder
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// Extrahera företag från HTML för en sida
+function extractCompanies($) {
+  const companies = [];
+
+  $('.SearchResultCard-card').each((index, element) => {
+    const card = $(element);
+    
+    // Extrahera företagsnamn från h2 länken
+    const companyName = card.find('h2 a').text().trim() || '';
+    
+    // Extrahera organisationsnummer
+    let orgNumber = '';
+    const orgSpan = card.find('.CardHeader-propertyList').filter((i, span) => 
+      $(span).text().includes('Org.nr')
+    );
+    if (orgSpan.length > 0) {
+      orgNumber = orgSpan.text().replace('Org.nr', '').trim();
+    }
+
+    // Extrahera telefonnummer
+    let phone = '';
+    const phoneSpan = card.find('.CardHeader-phone');
+    if (phoneSpan.length > 0) {
+      phone = phoneSpan.text().replace('Telefon', '').trim();
+    }
+
+    // Extrahera adress (efter location-dot ikon)
+    let address = '';
+    card.find('span').each((i, span) => {
+      const parentHtml = $(span).parent().html();
+      if (parentHtml && parentHtml.includes('fa-location-dot')) {
+        address = $(span).text().trim();
+      }
+    });
+
+    // Lägg till företaget i listan
+    companies.push({
+      namn: companyName,
+      orgNummer: orgNumber,
+      telefon: phone,
+      adress: address
+    });
+  });
+
+  return companies;
+}
+
+async function scrapeCompanies() {
+  const allCompanies = [];
+  let totalHämtad = 0;
+
+  console.log(`Startar skrapning av ${pages.length} sidor...\n`);
+
+  for (let i = 0; i < pages.length; i++) {
+    const url = pages[i];
+    const pageNum = i + 1;
+
+    try {
+      console.log(`📄 Hämtar sida ${pageNum}/${pages.length}...`);
+      
+      const response = await fetchPage(url);
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      const html = await response.text();
+      const $ = load(html);
+
+      const pageCompanies = extractCompanies($);
+      allCompanies.push(...pageCompanies);
+      totalHämtad += pageCompanies.length;
+
+      console.log(`   ✓ Sida ${pageNum} gav ${pageCompanies.length} företag (totalt: ${totalHämtad})\n`);
+
+      // Vänta 500ms innan nästa sida (förutom på sista sidan)
+      if (i < pages.length - 1) {
+        await sleep(500);
+      }
+    } catch (error) {
+      console.error(`   ✗ Fel på sida ${pageNum}: ${error.message}\n`);
+      // Fortsätt med nästa sida
+    }
+  }
+
+  if (allCompanies.length === 0) {
+    console.log('❌ Ingen data hittades på någon sida.');
+    return;
+  }
+
+  // Skapa CSV-fil med rubrikrad
+  const header = 'Företagsnamn,Organisationsnummer,Telefonnummer,Adress\n';
+  const rows = allCompanies.map(c => 
+    `"${c.namn}","${c.orgNummer}","${c.telefon}","${c.adress}"`
+  ).join('\n');
+
+  writeFileSync('foretag.csv', header + rows, 'utf-8');
+
+  console.log(`✅ Klar! ${allCompanies.length} företag från ${pages.length} sidor sparade i foretag.csv`);
+}
+
+scrapeCompanies();
