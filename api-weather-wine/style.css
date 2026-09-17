@@ -1,0 +1,123 @@
+.wine-app {
+  background: #f4f0eb;
+  color: #1f1a17;
+  text-align: center;
+}
+
+.wine-app-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+.wine-app .eyebrow {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  margin: 0 0 20px;
+  color: #8a7f76;
+}
+
+.wine-app h1 {
+  font-size: clamp(32px, 6vw, 44px);
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+.wine-app .intro {
+  font-size: 18px;
+  font-weight: 300;
+  color: #5c534c;
+  margin: 0 0 32px;
+}
+
+.wine-app button {
+  background: #1f1a17;
+  color: #f4f0eb;
+  border: none;
+  padding: 14px 28px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: opacity 0.2s;
+}
+
+.wine-app button:hover {
+  opacity: 0.8;
+}
+
+.wine-app button:focus {
+  outline: none;
+}
+
+.wine-app button:focus-visible {
+  outline: 2px solid #1f1a17;
+  outline-offset: 3px;
+}
+
+.wine-app .result {
+  margin-top: 40px;
+}
+
+.wine-app #weather {
+  font-size: 16px;
+  color: #5c534c;
+  margin: 0 0 12px;
+}
+
+.wine-app #wine {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.wine-app #reason {
+  font-size: 16px;
+  font-weight: 300;
+  color: #5c534c;
+  margin: 0;
+}
+
+.wine-app .back-link {
+  display: inline-block;
+  margin-top: 48px;
+}
+
+/* Sidan fyller hela skärmen så att footern hamnar längst ner */
+body.wine-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body.wine-page .wine-app {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+body.wine-page .wine-app-inner {
+  width: 100%;
+  padding-top: 96px;
+}
+
+/* Try it-sektionen på startsidan */
+.try-it-intro {
+  max-width: 640px;
+  margin: 0 0 32px;
+  color: #5c534c;
+}
+
+.try-it .wine-app {
+  border-radius: 20px;
+}
+
+.wine-app .app-title {
+  font-size: clamp(32px, 6vw, 44px);
+  line-height: 1.1;
+  font-weight: 600;
+  margin: 0 0 16px;
+}

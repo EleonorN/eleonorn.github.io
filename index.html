@@ -18,6 +18,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link href="style.css" rel="stylesheet" />
+  <link href="api-weather-wine/style.css" rel="stylesheet" />
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -49,7 +50,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <section class="section" id="work">
       <div class="container-wide">
-        <h2>Selected work</h2>
+        <h2>Work</h2>
         <div class="case-grid">
 
         <a class="case-card" href="glass-case.html">
@@ -61,7 +62,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="case-meta">Google Trends · SMHI · Chart.js · 2026</p>
           <span class="case-link">Read the case →</span>
         </a>
-        
+
           <a class="case-card" href="seo-case.html">
             <h3 class="case-title">SEO for an equestrian e-commerce brand</h3>
             <p class="case-text">
@@ -72,6 +73,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="case-link">Read the case →</span>
           </a>
 
+        </div>
+      </div>
+    </section>
+
+    <section class="section try-it" id="try-it">
+      <div class="container-wide">
+        <h2>Try it</h2>
+        <p class="try-it-intro">
+          A small web app that fetches live weather in Stockholm from the
+          Open-Meteo API and suggests a wine to match the weather.
+        </p>
+
+        <div class="wine-app">
+          <div class="wine-app-inner">
+            <p class="eyebrow">WEATHER × WINE</p>
+            <h3 class="app-title">What's your<br> wine today?</h3>
+            <p class="intro">Let the weather decide.</p>
+            <button id="wineButton">Find my wine →</button>
+
+            <section id="result" class="result">
+              <p id="weather"></p>
+              <h2 id="wine"></h2>
+              <p id="reason"></p>
+            </section>
+          </div>
         </div>
       </div>
     </section>
@@ -98,6 +124,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </ul>
     <p class="footer-copy">© 2026 Eleonor Norrman</p>
   </footer>
+
+<script src="api-weather-wine/script.js"></script>
 
 </body>
 </html>
