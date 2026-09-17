@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-N62HQMMN');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather-driven ice cream marketing | Eleonor Norrman</title>
+<meta name="description" content="Using Google Trends and SMHI weather data to find an autumn product idea, content plan and PR angle for an ice cream brand.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N62HQMMN"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="nav-bar">
+    <nav class="nav">
+      <a href="index.html" class="nav-name">Eleonor Norrman</a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact" class="nav-contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <article class="article">
+
+    <h1 class="article-title">Weather-driven ice cream marketing</h1>
+    <p class="article-intro">
+      How search data and weather data can shape an ice cream brand's
+      marketing all year round, from weather-based ads in summer to a
+      seasonal product in autumn.
+    </p>
+
+    <div class="article-meta">
+      <div><strong>Role</strong> Data analysis, content strategy</div>
+      <div><strong>Tools</strong> Google Trends, SMHI open data, Google Sheets, Looker Studio, Chart.js</div>
+      <div><strong>Context</strong> Growth Marketing, Berghs</div>
+      <div><strong>Year</strong> 2026</div>
+    </div>
+
+    <h2>The challenge</h2>
+    <p>
+      Ice cream is strongly linked to summer. The question was how an ice
+      cream brand could use data to understand when interest drops, and
+      how to keep people interested in ice cream when the season turns.
+    </p>
+
+    <h2>My approach</h2>
+    <p>
+      I combined two datasets: monthly search interest for "glass" (ice
+      cream) in Sweden from Google Trends, and monthly average temperature
+      in Stockholm from SMHI. I merged the data in Google Sheets
+      and visualised it in Looker Studio.
+    </p>
+    <p>
+      I then compared ice cream searches with searches for "kladdkaka", a
+      Swedish chocolate cake, to see what people search for instead when
+      ice cream interest falls.
+    </p>
+
+        <figure class="case-chart">
+      <h3>Ice cream searches follow the temperature</h3>
+      <div style="position:relative; height:360px;">
+        <canvas id="weatherChart"></canvas>
+      </div>
+      <figcaption>
+        Source: Google Trends (search term "glass", Sweden) and SMHI (Stockholm).
+        September 2021 – May 2026, one value per month. Search interest is an
+        index from 0 to 100, not the number of searches.
+      </figcaption>
+    </figure>
+
+    <h2>The insight</h2>
+    <p>
+      Ice cream searches follow the temperature closely. They rise in
+      spring, peak in July and drop in autumn. The warmest month in the
+      period, July 2025, also had the most searches.
+    </p>
+    <p>
+      When ice cream interest falls, searches for kladdkaka rise and peak
+      every November. At the same time, ice cream searches in November have
+      grown every year, and in November 2025 ice cream passed kladdkaka for
+      the first time.
+    </p>
+
+    <figure class="case-chart">
+      <h3>Kladdkaka peaks in November, while ice cream catches up</h3>
+      <div style="position:relative; height:360px;">
+        <canvas id="cakeChart"></canvas>
+      </div>
+      <figcaption>
+        Source: Google Trends (search terms "glass" and "kladdkaka", Sweden).
+        September 2021 – September 2026, one value per month. Google Trends
+        recalculates the index for each comparison, so the ice cream values
+        differ slightly from the chart above.
+      </figcaption>
+    </figure>
+
+    <div class="compare">
+      <div class="compare-box">
+        <p class="compare-label">November 2021</p>
+        <p>Ice cream 27 · Kladdkaka 38</p>
+      </div>
+      <div class="compare-box">
+        <p class="compare-label">November 2025</p>
+        <p>Ice cream 38 · Kladdkaka 37</p>
+      </div>
+    </div>
+
+    <h2>The recommendation</h2>
+    <p>
+      <strong>Spring and summer, weather-driven ads:</strong> connect live
+      weather data from SMHI to the ad platform. Sunny days show ads with
+      ice cream outdoors. Rainy days pause those ads and show a cosy indoor
+      setting instead.
+    </p>
+    <p>
+      <strong>Autumn, a seasonal product:</strong> launch "Höstbitar", small
+      chocolate-covered bites of kladdkaka and vanilla ice cream shaped as
+      pumpkins and ghosts. The product combines ice cream with something
+      people already search for in autumn.
+    </p>
+    <p>
+      The launch is supported by a Reel and an Instagram poll aimed at
+      parents of young children, followed by a PR pitch to food journalists
+      built on the Google Trends data.
+    </p>
+
+    <p><em>Search interest is shown as an index from 0 to 100, not as the
+      number of searches. The product and brand are a concept.</em></p>
+
+    <a href="index.html#work" class="back-link">← Back to work</a>
+
+  </article>
+
+  <footer class="footer" id="contact">
+    <h2 class="footer-title">Let's connect</h2>
+    <ul class="footer-links">
+      <li><a href="https://www.linkedin.com/in/eleonor-norrman-473b78100/"
+             target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="mailto:eleonor.norrman@gmail.com">Email</a></li>
+      <li><a href="https://github.com/EleonorN"
+             target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Eleonor Norrman</p>
+  </footer>
+
+</body>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script>
+    const weatherLabels = ["Sep 2021","Oct 2021","Nov 2021","Dec 2021","Jan 2022","Feb 2022","Mar 2022","Apr 2022","May 2022","Jun 2022","Jul 2022","Aug 2022","Sep 2022","Oct 2022","Nov 2022","Dec 2022","Jan 2023","Feb 2023","Mar 2023","Apr 2023","May 2023","Jun 2023","Jul 2023","Aug 2023","Sep 2023","Oct 2023","Nov 2023","Dec 2023","Jan 2024","Feb 2024","Mar 2024","Apr 2024","May 2024","Jun 2024","Jul 2024","Aug 2024","Sep 2024","Oct 2024","Nov 2024","Dec 2024","Jan 2025","Feb 2025","Mar 2025","Apr 2025","May 2025","Jun 2025","Jul 2025","Aug 2025","Sep 2025","Oct 2025","Nov 2025","Dec 2025","Jan 2026","Feb 2026","Mar 2026","Apr 2026","May 2026"];
+    const weatherIceCream = [36,31,28,33,39,40,41,50,58,75,78,63,36,32,32,47,45,38,40,56,68,81,84,54,42,35,33,37,38,40,46,56,80,75,87,65,44,35,36,40,42,43,47,64,67,82,100,63,47,39,38,48,52,58,53,72,82];
+    const weatherTemp = [12.7,9.3,3.7,-1.6,0.5,0.9,4.1,5.6,11.5,18.1,18.4,19.8,12.2,10.1,5.5,-1.4,1.2,0.5,0.6,5.7,12.4,18.5,17.5,16.9,15.7,6.7,1.7,-1.8,-2.9,0.6,3.0,4.9,14.9,17.3,18.8,18.7,14.7,9.8,4.1,2.3,0.9,-0.1,4.9,8.3,10.5,16.2,20.1,16.6,15.2,9.0,4.4,3.9,-2.1,-4.2,5.6,7.3,12.6];
+
+    const cakeLabels = [...weatherLabels, "Jun 2026","Jul 2026","Aug 2026","Sep 2026"];
+    const cakeIceCream = [35,30,27,32,38,38,40,50,57,72,77,59,34,31,30,48,45,37,40,53,69,83,83,50,40,33,32,36,37,39,45,56,80,76,85,63,43,35,36,38,40,41,45,62,67,77,94,63,46,38,38,47,50,58,52,70,83,79,100,65,45];
+    const cakeKladdkaka = [29,34,38,25,34,33,28,30,26,25,26,26,27,31,38,27,32,35,32,33,24,24,30,27,27,30,37,25,30,32,32,25,21,24,23,24,24,27,37,25,29,31,30,29,27,23,24,28,24,31,37,27,32,33,28,27,23,20,23,26,25];
+
+    Chart.defaults.font.family = "Inter, sans-serif";
+    Chart.defaults.color = "#555";
+
+        function checkbox(color, hidden) {
+      const size = 16, c = document.createElement("canvas");
+      c.width = size; c.height = size;
+      const ctx = c.getContext("2d");
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = color;
+      ctx.fillStyle = "#fff";
+      ctx.beginPath(); ctx.roundRect(1, 1, size - 2, size - 2, 3); ctx.fill(); ctx.stroke();
+      if (hidden) {
+        ctx.beginPath();
+        ctx.moveTo(4.5, 4.5); ctx.lineTo(11.5, 11.5);
+        ctx.moveTo(11.5, 4.5); ctx.lineTo(4.5, 11.5);
+        ctx.stroke();
+      }
+      return c;
+    }
+    const shared = {
+      responsive: true,
+      maintainAspectRatio: false,
+            animation: false,
+      interaction: { mode: "index", intersect: false },
+           plugins: {
+        legend: {
+          position: "top",
+          align: "start",
+          labels: {
+            usePointStyle: true,
+            generateLabels: (chart) => chart.data.datasets.map((ds, i) => ({
+              text: ds.label,
+              datasetIndex: i,
+              pointStyle: checkbox(ds.borderColor, !chart.isDatasetVisible(i)),
+              fontColor: "#555",
+              hidden: false
+            }))
+          }
+        }
+      },
+      elements: { point: { radius: 0, hoverRadius: 4 }, line: { tension: 0.3, borderWidth: 2 } }
+    };
+
+    const weather = new Chart(document.getElementById("weatherChart"), {
+      type: "line",
+      data: {
+        labels: weatherLabels,
+        datasets: [
+          { label: "Ice cream search interest (index 0–100)", data: weatherIceCream, borderColor: "#4A7BD0", yAxisID: "y" },
+          { label: "Average temperature Stockholm (°C)", data: weatherTemp, borderColor: "#E8954A", yAxisID: "y1" }
+        ]
+      },
+      options: {
+        ...shared,
+        scales: {
+          x: { grid: { display: false }, ticks: { maxTicksLimit: 8 } },
+          y: { min: 0, max: 100, title: { display: true, text: "Search index" } },
+                    y1: { position: "right", min: -5, max: 25, grid: { display: false }, title: { display: true, text: "°C" } }
+        }
+      }
+    });
+
+    const cake = new Chart(document.getElementById("cakeChart"), {
+      type: "line",
+      data: {
+        labels: cakeLabels,
+        datasets: [
+          { label: "Ice cream search interest (index 0–100)", data: cakeIceCream, borderColor: "#4A7BD0" },
+          { label: "Kladdkaka search interest (index 0–100)", data: cakeKladdkaka, borderColor: "#7A4E3A" }
+        ]
+      },
+      options: {
+        ...shared,
+        scales: {
+          x: { grid: { display: false }, ticks: { maxTicksLimit: 8 } },
+          y: { min: 0, max: 100, title: { display: true, text: "Search index" } }
+        }
+      }
+    });
+       [weather, cake].forEach(c => { c.options.animation = { duration: 400 }; });
+  </script>
+</html>
