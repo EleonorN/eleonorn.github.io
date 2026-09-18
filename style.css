@@ -118,8 +118,11 @@ body {
 .hero-subtitle {
   font-size: 1.125rem;
   color: var(--muted);
-  max-width: 460px;
+  /* Rymmer hela meningen på en rad på större skärmar */
+  max-width: 580px;
   margin: 0 auto 40px;
+  /* Delar raderna jämnt i stället för att lämna ett ensamt ord sist */
+  text-wrap: balance;
 }
 
 /* ============================================
