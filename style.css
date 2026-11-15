@@ -4,6 +4,7 @@
 :root {
   --white: #ffffff;
   --sand:  #f4f0eb;
+  --sand-light: #faf8f5;
   --ink:   #1c1b19;
   --muted: #6b655e;
   --line:  #e3ddd5;
@@ -93,7 +94,8 @@ body {
    HERO
    ============================================ */
 .hero {
-  background-color: var(--sand);
+  /* Ljusare än navigationen, så att menyn syns som en egen rad i samma ton */
+  background-color: var(--sand-light);
   padding: 96px 24px 120px;
   text-align: center;
 }
