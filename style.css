@@ -1349,3 +1349,14 @@ img.screen {
   .photo-grid { grid-template-columns: 1fr; }
 }
 
+/* ============================================
+   PROJEKTKORTENS FÄRGER
+   Varje kort får en ljus nyans av projektets egen färg
+   ============================================ */
+.project-card--aroma    { background-color: #e4e2f6; } /* Aroma Roasts blå, ljus */
+.project-card--glass    { background-color: #dfeef6; } /* isblått */
+.project-card--seo      { background-color: #f5eed3; } /* smörgult */
+.project-card--rabalder { background-color: #e6e9da; } /* mossgrönt, från bilderna i skogen */
+.project-card--bygg     { background-color: #f6e1f3; } /* Byggalliansens rosa */
+.project-card--klirra   { background-color: #fde4d8; } /* Klirras persika */
+
