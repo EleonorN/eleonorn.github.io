@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -11,8 +11,30 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What's Your Wine? | Eleonor Norrman</title>
-  <meta name="description" content="A small web app that fetches live weather in Stockholm from the Open-Meteo API and suggests a wine.">
+  <title>Vilket vin blir det i dag? – Eleonor Norrman</title>
+  <meta name="description" content="En liten webbapp som hämtar aktuellt väder i Stockholm från Open-Meteos API och föreslår ett vin som passar vädret.">
+  <link rel="canonical" href="https://eleonorn.github.io/api-weather-wine/">
+  <meta name="author" content="Eleonor Norrman">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:site_name" content="Eleonor Norrman">
+  <meta property="og:title" content="Vilket vin blir det i dag? – Eleonor Norrman">
+  <meta property="og:description" content="En liten webbapp som hämtar aktuellt väder i Stockholm från Open-Meteos API och föreslår ett vin som passar vädret.">
+  <meta property="og:url" content="https://eleonorn.github.io/api-weather-wine/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Vilket vin blir det i dag?",
+    "description": "En liten webbapp som hämtar aktuellt väder i Stockholm från Open-Meteos API och föreslår ett vin som passar vädret.",
+    "url": "https://eleonorn.github.io/api-weather-wine/",
+    "inLanguage": "sv-SE",
+    "datePublished": "2026",
+    "author": { "@type": "Person", "@id": "https://eleonorn.github.io/#person", "name": "Eleonor Norrman", "url": "https://eleonorn.github.io/" },
+    "isPartOf": { "@type": "WebSite", "@id": "https://eleonorn.github.io/#website" }
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,12 +51,12 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header class="nav-bar">
-    <nav class="nav">
+    <nav class="nav" aria-label="Huvudmeny">
       <a href="../index.html" class="nav-name">Eleonor Norrman</a>
       <ul class="nav-links">
-        <li><a href="../index.html#work">Work</a></li>
-        <li><a href="../index.html#about">About</a></li>
-        <li><a href="../index.html#contact" class="nav-contact">Contact</a></li>
+        <li><a href="../index.html#work">Arbeten</a></li>
+        <li><a href="../index.html#about">Om mig</a></li>
+        <li><a href="../index.html#contact" class="nav-contact">Kontakt</a></li>
       </ul>
     </nav>
   </header>
@@ -42,31 +64,31 @@
   <main class="wine-app">
     <div class="wine-app-inner">
 
-      <p class="eyebrow">WEATHER × WINE</p>
+      <p class="eyebrow">VÄDER × VIN</p>
 
-      <h1>What's your<br> wine today?</h1>
+      <h1>Vilket vin blir<br> det i dag?</h1>
 
-      <p class="intro">Let the weather decide.</p>
+      <p class="intro">Låt vädret bestämma.</p>
 
-      <button id="wineButton">Find my wine →</button>
+      <button id="wineButton" type="button">Hitta mitt vin →</button>
 
-      <section id="result" class="result">
+      <div id="result" class="result" aria-live="polite">
         <p id="weather"></p>
-        <h2 id="wine"></h2>
+        <p id="wine" class="wine-name"></p>
         <p id="reason"></p>
-      </section>
+      </div>
 
-      <a href="../index.html" class="back-link">← Back to portfolio</a>
+      <a href="../index.html" class="back-link">← Tillbaka till startsidan</a>
 
     </div>
   </main>
 
   <footer class="footer" id="contact">
-    <h2 class="footer-title">Let's connect</h2>
+    <h2 class="footer-title">Hör av dig</h2>
     <ul class="footer-links">
       <li><a href="https://www.linkedin.com/in/eleonor-norrman-473b78100/"
              target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-      <li><a href="mailto:eleonor.norrman@gmail.com">Email</a></li>
+      <li><a href="mailto:eleonor.norrman@gmail.com">E-post</a></li>
       <li><a href="https://github.com/EleonorN"
              target="_blank" rel="noopener noreferrer">GitHub</a></li>
     </ul>

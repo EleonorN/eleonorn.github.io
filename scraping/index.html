@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -11,8 +11,30 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Scraping – Ellan Norrman</title>
-  <meta name="description" content="A Node script that collects company data from allabolag.se, and the resulting CSV file.">
+  <title>Scraping av företagsdata – Eleonor Norrman</title>
+  <meta name="description" content="Ett Node-skript som samlar in företagsdata från allabolag.se, och den färdiga filen med 97 företag inom ridsportbranschen.">
+  <link rel="canonical" href="https://eleonorn.github.io/scraping/">
+  <meta name="author" content="Eleonor Norrman">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:site_name" content="Eleonor Norrman">
+  <meta property="og:title" content="Scraping av företagsdata – Eleonor Norrman">
+  <meta property="og:description" content="Ett Node-skript som samlar in företagsdata från allabolag.se, och den färdiga filen med 97 företag inom ridsportbranschen.">
+  <meta property="og:url" content="https://eleonorn.github.io/scraping/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Scraping av företagsdata",
+    "description": "Ett Node-skript som samlar in företagsdata från allabolag.se, och den färdiga filen med 97 företag inom ridsportbranschen.",
+    "url": "https://eleonorn.github.io/scraping/",
+    "inLanguage": "sv-SE",
+    "datePublished": "2026",
+    "author": { "@type": "Person", "@id": "https://eleonorn.github.io/#person", "name": "Eleonor Norrman", "url": "https://eleonorn.github.io/" },
+    "isPartOf": { "@type": "WebSite", "@id": "https://eleonorn.github.io/#website" }
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,46 +49,52 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header class="nav-bar">
-    <nav class="nav">
+    <nav class="nav" aria-label="Huvudmeny">
       <a href="../index.html" class="nav-name">Eleonor Norrman</a>
       <ul class="nav-links">
-        <li><a href="../index.html#work">Work</a></li>
-        <li><a href="../index.html#about">About</a></li>
-        <li><a href="../index.html#contact" class="nav-contact">Contact</a></li>
+        <li><a href="../index.html#work">Arbeten</a></li>
+        <li><a href="../index.html#about">Om mig</a></li>
+        <li><a href="../index.html#contact" class="nav-contact">Kontakt</a></li>
       </ul>
     </nav>
   </header>
 
+  <main>
   <article class="article">
 
-    <h1 class="article-title">Scraping</h1>
+    <h1 class="article-title">Scraping av företagsdata</h1>
     <p class="article-intro">
-      A small Node script that collects company data from allabolag.se: company
-      name, registration number, phone and address, across five pages of search
-      results for the riding sport industry. It writes the result to a text file.
+      Ett litet Node-skript som samlar in företagsdata från allabolag.se:
+      företagsnamn, organisationsnummer, telefon och adress, från fem sidor
+      med sökresultat för ridsportbranschen. Resultatet sparas i en textfil.
     </p>
 
     <div class="article-meta">
-      <div><strong>Source</strong> allabolag.se</div>
-      <div><strong>Tools</strong> Node, Cheerio</div>
-      <div><strong>Result</strong> 124 companies</div>
-      <div><strong>Year</strong> 2026</div>
+      <div><strong>Källa</strong> allabolag.se</div>
+      <div><strong>Verktyg</strong> Node, Cheerio</div>
+      <div><strong>Resultat</strong> 97 företag</div>
+      <div><strong>År</strong> 2026</div>
     </div>
 
-    <h2>Files</h2>
-    <p><strong><a href="scraper.txt">scraper.txt</a></strong> — the script</p>
-    <p><strong><a href="foretag.txt">foretag.txt</a></strong> — the collected data</p>
+    <h2>Filer</h2>
+    <p><strong><a href="scraper.txt">scraper.txt</a></strong> – skriptet</p>
+    <p><strong><a href="foretag.txt">foretag.txt</a></strong> – den insamlade datan</p>
+    <p>
+      Enskilda firmor är borttagna ur filen eftersom deras organisationsnummer
+      är ägarens personnummer. Kvar finns aktiebolag och handelsbolag.
+    </p>
 
-    <a href="../index.html#work" class="back-link">← Back to work</a>
+    <a href="../index.html#work" class="back-link">← Tillbaka till arbeten</a>
 
   </article>
+  </main>
 
   <footer class="footer" id="contact">
-    <h2 class="footer-title">Let's connect</h2>
+    <h2 class="footer-title">Hör av dig</h2>
     <ul class="footer-links">
       <li><a href="https://www.linkedin.com/in/eleonor-norrman-473b78100/"
              target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-      <li><a href="mailto:eleonor.norrman@gmail.com">Email</a></li>
+      <li><a href="mailto:eleonor.norrman@gmail.com">E-post</a></li>
       <li><a href="https://github.com/EleonorN"
              target="_blank" rel="noopener noreferrer">GitHub</a></li>
     </ul>

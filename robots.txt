@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /gtm-course/
+Disallow: /gtm-real-site/
+
+Sitemap: https://eleonorn.github.io/sitemap.xml

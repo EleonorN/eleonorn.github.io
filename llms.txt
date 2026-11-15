@@ -1,0 +1,19 @@
+# Eleonor Norrman
+
+> Portfolio för Eleonor Norrman (kallas Ellan), Growth Marketing-student på Berghs School of Communication som tidigare har studerat UX- och UI-design på Berghs. Sidan är på svenska och innehåller case inom SEO, dataanalys, API:er, scraping och tracking med Google Tag Manager.
+
+## Om mig
+
+- [Startsida](https://eleonorn.github.io/): presentation, arbeten och kontaktuppgifter
+- [LinkedIn](https://www.linkedin.com/in/eleonor-norrman-473b78100/)
+- [GitHub](https://github.com/EleonorN)
+
+## Case
+
+- [Väderstyrd marknadsföring för glass](https://eleonorn.github.io/glass-case.html): Google Trends och SMHI-data blev en höstprodukt, innehållsplan och PR-vinkel (2026)
+- [SEO för en e-handel inom ridsport](https://eleonorn.github.io/seo-case.html): sökordsanalys och on-page-SEO för en produktsida (2025)
+
+## Projekt
+
+- [Vilket vin blir det i dag?](https://eleonorn.github.io/api-weather-wine/): webbapp som hämtar väder från Open-Meteos API och föreslår ett vin
+- [Scraping av företagsdata](https://eleonorn.github.io/scraping/): Node-skript som samlar företagsdata från allabolag.se (97 aktie- och handelsbolag inom ridsport)
