@@ -1293,3 +1293,38 @@ img.screen {
   margin-right: 0;
 }
 
+/* ============================================
+   MIN TID PÅ BERGHS (bildflöde)
+   ============================================ */
+.photo-grid {
+  column-count: 3;
+  column-gap: 24px;
+  margin-top: 32px;
+}
+
+.photo {
+  break-inside: avoid;
+  margin: 0 0 24px;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+.photo figcaption {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+  .photo-grid { column-count: 2; }
+}
+
+@media (max-width: 560px) {
+  .photo-grid { column-count: 1; }
+}
+
