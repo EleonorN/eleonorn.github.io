@@ -1328,3 +1328,24 @@ img.screen {
   .photo-grid { column-count: 1; }
 }
 
+/* Bilderna i rader i stället för kolumner, så att bilder på samma rad börjar i samma höjd */
+.photo-grid {
+  column-count: initial;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.photo {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  .photo-grid { grid-template-columns: 1fr; }
+}
+
