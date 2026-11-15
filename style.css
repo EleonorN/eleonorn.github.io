@@ -306,19 +306,46 @@ a.project-card:focus-visible {
 /* ============================================
    FOOTER
    ============================================ */
+/* Mörk sidfot som ett tydligt avslut, med kontaktuppgifterna i fokus */
 .footer {
-  border-top: 1px solid var(--line);
-  padding: 64px 24px;
+  background-color: #1f1d1a;
+  color: #f4f0eb;
+  padding: 88px 24px 40px;
   text-align: center;
 }
 
+.footer-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
 .footer-title {
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 24px;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: #f4f0eb;
+  margin-bottom: 28px;
+}
+
+.footer-lead {
+  color: #bdb5ab;
+  margin-bottom: 32px;
+}
+
+.footer-mail {
+  display: inline-block;
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
+  color: #f4f0eb;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(244, 240, 235, 0.4);
+  padding-bottom: 4px;
+  margin-bottom: 28px;
+  transition: border-color 0.2s ease;
+  overflow-wrap: anywhere;
+}
+
+.footer-mail:hover {
+  border-bottom-color: #f4f0eb;
 }
 
 .footer-links {
@@ -327,23 +354,29 @@ a.project-card:focus-visible {
   justify-content: center;
   gap: 32px;
   flex-wrap: wrap;
-  margin-bottom: 32px;
+  margin-bottom: 64px;
+  color: #bdb5ab;
 }
 
 .footer-links a {
-  color: var(--ink);
+  color: #f4f0eb;
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s ease;
 }
 
 .footer-links a:hover {
-  border-bottom-color: var(--ink);
+  border-bottom-color: #f4f0eb;
+}
+
+.footer a:focus-visible {
+  outline: 2px solid #f4f0eb;
+  outline-offset: 4px;
 }
 
 .footer-copy {
-  font-size: 0.875rem;
-  color: var(--muted);
+  font-size: 0.8125rem;
+  color: #8f877d;
 }
 
 /* ============================================
