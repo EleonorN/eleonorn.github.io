@@ -157,3 +157,57 @@ body.wine-page .wine-app-inner {
   opacity: 0.6;
   cursor: default;
 }
+
+/* ============================================
+   ILLUSTRATIONER
+   ============================================ */
+/* Druvor från början, sedan väder och vin bredvid varandra som klistermärken */
+.wine-art {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 170px;
+  margin: 0 0 28px;
+}
+
+.wine-art img {
+  display: block;
+  height: 100%;
+  width: auto;
+  filter: drop-shadow(0 6px 10px rgba(31, 26, 23, 0.12));
+}
+
+.wine-art-sky {
+  height: 76% !important;
+  transform: rotate(-6deg);
+  align-self: flex-start;
+  margin-right: -10px;
+}
+
+.wine-art-wine {
+  transform: rotate(5deg);
+}
+
+.wine-art img[hidden] {
+  display: none;
+}
+
+/* Liten studs när ett nytt förslag visas */
+.wine-art.pop img {
+  animation: wine-pop 0.45s ease;
+}
+
+@keyframes wine-pop {
+  0%   { opacity: 0; scale: 0.85; }
+  70%  { opacity: 1; scale: 1.04; }
+  100% { scale: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wine-art.pop img { animation: none; }
+}
+
+@media (max-width: 480px) {
+  .wine-art { height: 140px; }
+}
+

@@ -10,64 +10,96 @@
 
   window.dataLayer = window.dataLayer || [];
 
+  // Illustrationerna: druvor från början, sedan väder och vin
+  const art = app.querySelector(".wine-art");
+  const grapes = art && art.querySelector(".wine-art-grapes");
+  const skyImg = art && art.querySelector(".wine-art-sky");
+  const wineImg = art && art.querySelector(".wine-art-wine");
+  const artBase = grapes ? grapes.getAttribute("src").replace("druvor.webp", "") : "";
+  const SKY_ART = { sun: ["sol", "sol"], cloud: ["moln", "moln"], rain: ["regn", "regn"], snow: ["sno", "snö"], fog: ["dimma", "dimma"], storm: ["aska", "åska"] };
+  const WINE_ART = { rott: "rött vin", vitt: "vitt vin", rose: "rosévin", bubbel: "mousserande vin" };
+
+  function showArt(skyType, wineColor) {
+    if (!art) return;
+    const sky = SKY_ART[skyType] || SKY_ART.cloud;
+    skyImg.src = artBase + sky[0] + ".webp";
+    skyImg.alt = "Illustration: " + sky[1];
+    wineImg.src = artBase + "vin-" + wineColor + ".webp";
+    wineImg.alt = "Illustration: " + WINE_ART[wineColor];
+    grapes.hidden = true;
+    skyImg.hidden = false;
+    wineImg.hidden = false;
+    art.classList.remove("pop");
+    void art.offsetWidth;
+    art.classList.add("pop");
+  }
+
+  function showGrapes() {
+    if (!art) return;
+    grapes.hidden = false;
+    skyImg.hidden = true;
+    wineImg.hidden = true;
+  }
+
   // Vinlistan. Varje vin passar en eller flera vädertyper och ett temperaturspann.
+  // color styr vilken illustration som visas: rott, vitt, rose eller bubbel.
   // min är inklusive, max är exklusive.
   const WINES = [
     // Sol – varmt
-    { name: "Provence Rosé", reason: "Ljus, torr och gjord för solsken.", sky: ["sun"], min: 18, max: 99 },
-    { name: "Vermentino", reason: "Citrus och havssalt för en varm och ljus dag.", sky: ["sun"], min: 18, max: 99 },
-    { name: "Albariño", reason: "Krispig och frisk när solen är som starkast.", sky: ["sun"], min: 18, max: 99 },
-    { name: "Picpoul de Pinet", reason: "Syrlig och citronfrisk, direkt från kylen.", sky: ["sun"], min: 18, max: 99 },
-    { name: "Verdejo", reason: "Grönt äpple och gräs för en varm, lat dag.", sky: ["sun", "cloud"], min: 18, max: 99 },
+    { name: "Provence Rosé", color: "rose", reason: "Ljus, torr och gjord för solsken.", sky: ["sun"], min: 18, max: 99 },
+    { name: "Vermentino", color: "vitt", reason: "Citrus och havssalt för en varm och ljus dag.", sky: ["sun"], min: 18, max: 99 },
+    { name: "Albariño", color: "vitt", reason: "Krispig och frisk när solen är som starkast.", sky: ["sun"], min: 18, max: 99 },
+    { name: "Picpoul de Pinet", color: "vitt", reason: "Syrlig och citronfrisk, direkt från kylen.", sky: ["sun"], min: 18, max: 99 },
+    { name: "Verdejo", color: "vitt", reason: "Grönt äpple och gräs för en varm, lat dag.", sky: ["sun", "cloud"], min: 18, max: 99 },
 
     // Sol – milt
-    { name: "Sauvignon Blanc", reason: "Ett friskt och krispigt vin för en varmare dag.", sky: ["sun", "cloud"], min: 12, max: 18 },
-    { name: "Grüner Veltliner", reason: "Pepprig och lätt för milt solsken.", sky: ["sun", "cloud"], min: 12, max: 18 },
-    { name: "Chablis", reason: "Mineralisk och precis för en klar, mild dag.", sky: ["sun"], min: 12, max: 18 },
-    { name: "Sancerre", reason: "Ljus och mineralisk, precis som ljuset ute.", sky: ["sun"], min: 12, max: 18 },
+    { name: "Sauvignon Blanc", color: "vitt", reason: "Ett friskt och krispigt vin för en varmare dag.", sky: ["sun", "cloud"], min: 12, max: 18 },
+    { name: "Grüner Veltliner", color: "vitt", reason: "Pepprig och lätt för milt solsken.", sky: ["sun", "cloud"], min: 12, max: 18 },
+    { name: "Chablis", color: "vitt", reason: "Mineralisk och precis för en klar, mild dag.", sky: ["sun"], min: 12, max: 18 },
+    { name: "Sancerre", color: "vitt", reason: "Ljus och mineralisk, precis som ljuset ute.", sky: ["sun"], min: 12, max: 18 },
 
     // Sol – kallt
-    { name: "Crémant", reason: "Kallt solsken förtjänar bubblor.", sky: ["sun"], min: -99, max: 12 },
-    { name: "Beaujolais", reason: "Lätt rött, gärna lite kylt, för en klar och solig dag.", sky: ["sun"], min: -99, max: 12 },
-    { name: "Torr Riesling", reason: "Stålig och ren för kall, klar luft.", sky: ["sun"], min: -99, max: 12 },
-    { name: "Cabernet Franc", reason: "Gröna toner och svalka för den låga vintersolen.", sky: ["sun"], min: -99, max: 12 },
+    { name: "Crémant", color: "bubbel", reason: "Kallt solsken förtjänar bubblor.", sky: ["sun"], min: -99, max: 12 },
+    { name: "Beaujolais", color: "rott", reason: "Lätt rött, gärna lite kylt, för en klar och solig dag.", sky: ["sun"], min: -99, max: 12 },
+    { name: "Torr Riesling", color: "vitt", reason: "Stålig och ren för kall, klar luft.", sky: ["sun"], min: -99, max: 12 },
+    { name: "Cabernet Franc", color: "rott", reason: "Gröna toner och svalka för den låga vintersolen.", sky: ["sun"], min: -99, max: 12 },
 
     // Moln
-    { name: "Pinot Grigio", reason: "Enkel och avslappnad, precis som den grå himlen.", sky: ["cloud"], min: 18, max: 99 },
-    { name: "Soave", reason: "Mjuk mandel och päron under en grå himmel.", sky: ["cloud"], min: 12, max: 99 },
-    { name: "Chenin Blanc", reason: "Rund och mjuk under en molnig himmel.", sky: ["cloud", "fog"], min: 12, max: 99 },
-    { name: "Barbera", reason: "Saftig syra som lyfter en grå eftermiddag.", sky: ["cloud"], min: -99, max: 12 },
-    { name: "Gamay", reason: "Klar röd frukt mot molnen.", sky: ["cloud", "rain"], min: -99, max: 12 },
-    { name: "Dolcetto", reason: "Mörk och lättsam när solen håller sig undan.", sky: ["cloud"], min: -99, max: 12 },
-    { name: "Côtes du Rhône", reason: "Värmande kryddighet för en grå och sval dag.", sky: ["cloud"], min: -99, max: 12 },
+    { name: "Pinot Grigio", color: "vitt", reason: "Enkel och avslappnad, precis som den grå himlen.", sky: ["cloud"], min: 18, max: 99 },
+    { name: "Soave", color: "vitt", reason: "Mjuk mandel och päron under en grå himmel.", sky: ["cloud"], min: 12, max: 99 },
+    { name: "Chenin Blanc", color: "vitt", reason: "Rund och mjuk under en molnig himmel.", sky: ["cloud", "fog"], min: 12, max: 99 },
+    { name: "Barbera", color: "rott", reason: "Saftig syra som lyfter en grå eftermiddag.", sky: ["cloud"], min: -99, max: 12 },
+    { name: "Gamay", color: "rott", reason: "Klar röd frukt mot molnen.", sky: ["cloud", "rain"], min: -99, max: 12 },
+    { name: "Dolcetto", color: "rott", reason: "Mörk och lättsam när solen håller sig undan.", sky: ["cloud"], min: -99, max: 12 },
+    { name: "Côtes du Rhône", color: "rott", reason: "Värmande kryddighet för en grå och sval dag.", sky: ["cloud"], min: -99, max: 12 },
 
     // Regn – svalt
-    { name: "Pinot Noir", reason: "Ett lätt och fruktigt rött vin för en kall kväll.", sky: ["rain", "fog"], min: -99, max: 12 },
-    { name: "Chianti Classico", reason: "Körsbär och örter medan regnet fortsätter.", sky: ["rain"], min: -99, max: 14 },
-    { name: "Merlot", reason: "Mjuk och värmande när det öser ner ute.", sky: ["rain"], min: -99, max: 14 },
+    { name: "Pinot Noir", color: "rott", reason: "Ett lätt och fruktigt rött vin för en kall kväll.", sky: ["rain", "fog"], min: -99, max: 12 },
+    { name: "Chianti Classico", color: "rott", reason: "Körsbär och örter medan regnet fortsätter.", sky: ["rain"], min: -99, max: 14 },
+    { name: "Merlot", color: "rott", reason: "Mjuk och värmande när det öser ner ute.", sky: ["rain"], min: -99, max: 14 },
 
     // Regn – milt
-    { name: "Valpolicella", reason: "Frisk röd frukt för ett varmt sommarregn.", sky: ["rain"], min: 12, max: 99 },
-    { name: "Torr rosé", reason: "Regn i varm luft kräver ändå något rosa.", sky: ["rain"], min: 12, max: 99 },
-    { name: "Bardolino", reason: "Lätt nog att njuta av medan duggregnet faller.", sky: ["rain"], min: 12, max: 99 },
-    { name: "Vinho Verde", reason: "Lite pärlande, för regn som inte är kallt.", sky: ["rain"], min: 12, max: 99 },
+    { name: "Valpolicella", color: "rott", reason: "Frisk röd frukt för ett varmt sommarregn.", sky: ["rain"], min: 12, max: 99 },
+    { name: "Torr rosé", color: "rose", reason: "Regn i varm luft kräver ändå något rosa.", sky: ["rain"], min: 12, max: 99 },
+    { name: "Bardolino", color: "rott", reason: "Lätt nog att njuta av medan duggregnet faller.", sky: ["rain"], min: 12, max: 99 },
+    { name: "Vinho Verde", color: "vitt", reason: "Lite pärlande, för regn som inte är kallt.", sky: ["rain"], min: 12, max: 99 },
 
     // Snö
-    { name: "Amarone", reason: "Fyllig och russinaktig för en snöig kväll.", sky: ["snow"], min: -99, max: 99 },
-    { name: "Barolo", reason: "Strävt och seriöst, gjort för kylan.", sky: ["snow"], min: -99, max: 99 },
-    { name: "Rioja Reserva", reason: "Vanilj, läder och värme i snön.", sky: ["snow"], min: -99, max: 99 },
-    { name: "Tawny Port", reason: "Nötter och kola vid fönstret medan det snöar.", sky: ["snow"], min: -99, max: 99 },
+    { name: "Amarone", color: "rott", reason: "Fyllig och russinaktig för en snöig kväll.", sky: ["snow"], min: -99, max: 99 },
+    { name: "Barolo", color: "rott", reason: "Strävt och seriöst, gjort för kylan.", sky: ["snow"], min: -99, max: 99 },
+    { name: "Rioja Reserva", color: "rott", reason: "Vanilj, läder och värme i snön.", sky: ["snow"], min: -99, max: 99 },
+    { name: "Tawny Port", color: "rott", reason: "Nötter och kola vid fönstret medan det snöar.", sky: ["snow"], min: -99, max: 99 },
 
     // Dimma
-    { name: "Nebbiolo", reason: "Odlad i dimma, godast i dimma.", sky: ["fog"], min: -99, max: 99 },
-    { name: "Barbaresco", reason: "Ros och tjära, lika stämningsfullt som diset.", sky: ["fog"], min: -99, max: 99 },
-    { name: "Grenache", reason: "Värmande kryddighet som skär genom diset.", sky: ["fog"], min: -99, max: 99 },
+    { name: "Nebbiolo", color: "rott", reason: "Odlad i dimma, godast i dimma.", sky: ["fog"], min: -99, max: 99 },
+    { name: "Barbaresco", color: "rott", reason: "Ros och tjära, lika stämningsfullt som diset.", sky: ["fog"], min: -99, max: 99 },
+    { name: "Grenache", color: "rott", reason: "Värmande kryddighet som skär genom diset.", sky: ["fog"], min: -99, max: 99 },
 
     // Åska
-    { name: "Syrah", reason: "Svartpeppar och rök som matchar åskan.", sky: ["storm"], min: -99, max: 99 },
-    { name: "Malbec", reason: "Kraftig och mörk medan ovädret drar in.", sky: ["storm"], min: -99, max: 99 },
-    { name: "Zinfandel", reason: "Stor, syltig och högljudd, precis som vädret.", sky: ["storm"], min: -99, max: 99 },
-    { name: "Châteauneuf-du-Pape", reason: "Något rejält för en dramatisk himmel.", sky: ["storm"], min: -99, max: 99 }
+    { name: "Syrah", color: "rott", reason: "Svartpeppar och rök som matchar åskan.", sky: ["storm"], min: -99, max: 99 },
+    { name: "Malbec", color: "rott", reason: "Kraftig och mörk medan ovädret drar in.", sky: ["storm"], min: -99, max: 99 },
+    { name: "Zinfandel", color: "rott", reason: "Stor, syltig och högljudd, precis som vädret.", sky: ["storm"], min: -99, max: 99 },
+    { name: "Châteauneuf-du-Pape", color: "rott", reason: "Något rejält för en dramatisk himmel.", sky: ["storm"], min: -99, max: 99 }
   ];
 
   // Kommer ihåg senaste vinet så att Försök igen ger något nytt
@@ -165,6 +197,7 @@
     weather.textContent = `${current.sky.icon} Stockholm · ${sv(current.temperature)} °C · Regn: ${sv(current.rain)} mm`;
     wine.textContent = pick.name;
     reason.textContent = pick.reason;
+    showArt(current.sky.type, pick.color);
 
     // Rutan byter färg efter vädret
     app.classList.remove("sky-sun", "sky-cloud", "sky-rain", "sky-snow", "sky-fog", "sky-storm");
@@ -181,12 +214,14 @@
       wine_name: pick.name,
       temperature: current.temperature,
       rain_mm: current.rain,
-      weather_type: current.sky.type
+      weather_type: current.sky.type,
+      wine_color: pick.color
     });
   }
 
   function showError(error) {
     weather.textContent = "";
+    showGrapes();
     wine.textContent = "Himlen gömmer sig just nu";
     reason.textContent = "Försök igen om en liten stund.";
     result.classList.add("show");
