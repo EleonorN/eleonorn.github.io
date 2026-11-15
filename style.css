@@ -1385,3 +1385,44 @@ img.screen {
 .project-card--bygg     { background-color: #f6e1f3; } /* Byggalliansens rosa */
 .project-card--klirra   { background-color: #fde4d8; } /* Klirras persika */
 
+/* ============================================
+   SIDHUVUD MED FÄRGADE RINGAR RUNT FOTOT
+   Vit bakgrund, ringarna i projektkortens rosa och persika
+   ============================================ */
+.nav-bar {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+
+.hero {
+  background-color: var(--white);
+}
+
+.hero-photo {
+  box-shadow: 0 0 0 10px #f6e1f3, 0 0 0 20px #fde4d8;
+  margin-bottom: 52px;
+}
+
+/* ============================================
+   PROJEKTKORTEN ZOOMAR LITE NÄR MAN HÅLLER MUSEN ÖVER
+   ============================================ */
+.project-visual > * {
+  transition: transform 0.35s ease;
+}
+
+a.project-card:hover .project-visual > *,
+a.project-card:focus-visible .project-visual > * {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-visual > *,
+  a.project-card {
+    transition: none;
+  }
+  a.project-card:hover .project-visual > *,
+  a.project-card:focus-visible .project-visual > * {
+    transform: none;
+  }
+}
+
