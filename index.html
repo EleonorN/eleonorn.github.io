@@ -58,7 +58,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link href="style.css?v=11" rel="stylesheet" />
-  <link href="api-weather-wine/style.css?v=2" rel="stylesheet" />
+  <link href="api-weather-wine/style.css?v=3" rel="stylesheet" />
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -194,6 +194,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h3 class="app-title">Vilket vin blir<br> det i dag?</h3>
             <p class="intro">Låt vädret bestämma.</p>
             <button id="wineButton" type="button">Hitta mitt vin →</button>
+            <div class="test-sky" role="group" aria-label="Testa ett annat väder">
+              <p class="test-sky-label">Eller testa ett annat väder:</p>
+              <button type="button" data-test-sky="sun" aria-pressed="false">☀️ Sol</button>
+              <button type="button" data-test-sky="cloud" aria-pressed="false">☁️ Moln</button>
+              <button type="button" data-test-sky="rain" aria-pressed="false">🌧️ Regn</button>
+              <button type="button" data-test-sky="snow" aria-pressed="false">❄️ Snö</button>
+              <button type="button" data-test-sky="fog" aria-pressed="false">🌫️ Dimma</button>
+              <button type="button" data-test-sky="storm" aria-pressed="false">⛈️ Åska</button>
+              <button type="button" data-test-sky="live" aria-pressed="false">📍 Stockholm nu</button>
+            </div>
 
             <div id="result" class="result" aria-live="polite">
               <p id="weather"></p>
@@ -231,7 +241,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="footer-copy">© 2026 Eleonor Norrman</p>
   </footer>
 
-<script src="api-weather-wine/script.js?v=2"></script>
+<script src="api-weather-wine/script.js?v=3"></script>
 
 </body>
 </html>

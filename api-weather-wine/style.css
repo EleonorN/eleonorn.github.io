@@ -193,7 +193,7 @@ body.wine-page .wine-app-inner {
 }
 
 /* Liten studs när ett nytt förslag visas */
-.wine-art.pop img {
+.wine-art img.pop {
   animation: wine-pop 0.45s ease;
 }
 
@@ -204,10 +204,54 @@ body.wine-page .wine-app-inner {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .wine-art.pop img { animation: none; }
+  .wine-art img.pop,
+  .wine-app #wine.pop { animation: none; }
 }
 
 @media (max-width: 480px) {
   .wine-art { height: 140px; }
+}
+
+/* Vinnamnet studsar till när ett nytt vin föreslås */
+.wine-app #wine.pop {
+  animation: wine-pop 0.4s ease;
+}
+
+/* ============================================
+   TESTA ETT ANNAT VÄDER
+   ============================================ */
+.test-sky {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.wine-app .test-sky-label {
+  width: 100%;
+  font-size: 14px;
+  color: #8a7f76;
+  margin: 0 0 4px;
+}
+
+.wine-app .test-sky button {
+  background: rgba(255, 255, 255, 0.6);
+  color: #1f1a17;
+  border: 1px solid rgba(31, 26, 23, 0.15);
+  padding: 7px 14px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.wine-app .test-sky button:hover {
+  opacity: 1;
+  background: #fff;
+}
+
+.wine-app .test-sky button[aria-pressed="true"] {
+  background: #1f1a17;
+  color: #f4f0eb;
+  border-color: #1f1a17;
 }
 

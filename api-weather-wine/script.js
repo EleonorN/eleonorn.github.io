@@ -22,16 +22,26 @@
   function showArt(skyType, wineColor) {
     if (!art) return;
     const sky = SKY_ART[skyType] || SKY_ART.cloud;
-    skyImg.src = artBase + sky[0] + ".webp";
-    skyImg.alt = "Illustration: " + sky[1];
-    wineImg.src = artBase + "vin-" + wineColor + ".webp";
-    wineImg.alt = "Illustration: " + WINE_ART[wineColor];
+    const skySrc = artBase + sky[0] + ".webp";
+    const wineSrc = artBase + "vin-" + wineColor + ".webp";
+    const firstTime = skyImg.hidden;
+
+    // Bara bilder som faktiskt byts studsar in, samma bild står still
+    swap(skyImg, skySrc, "Illustration: " + sky[1], firstTime);
+    swap(wineImg, wineSrc, "Illustration: " + WINE_ART[wineColor], firstTime);
     grapes.hidden = true;
     skyImg.hidden = false;
     wineImg.hidden = false;
-    art.classList.remove("pop");
-    void art.offsetWidth;
-    art.classList.add("pop");
+  }
+
+  function swap(img, src, alt, force) {
+    const changed = force || img.getAttribute("src") !== src;
+    img.alt = alt;
+    if (!changed) return;
+    img.src = src;
+    img.classList.remove("pop");
+    void img.offsetWidth;
+    img.classList.add("pop");
   }
 
   function showGrapes() {
@@ -150,7 +160,37 @@
 
   button.addEventListener("click", suggestWine);
 
+  // Testa ett annat väder: påhittat väder så att man kan se alla illustrationer
+  const TEST_WEATHER = {
+    sun:   { temperature: 22, rain: 0,   sky: { type: "sun",   icon: "☀️" } },
+    cloud: { temperature: 14, rain: 0,   sky: { type: "cloud", icon: "☁️" } },
+    rain:  { temperature: 9,  rain: 1.5, sky: { type: "rain",  icon: "🌧️" } },
+    snow:  { temperature: -3, rain: 0,   sky: { type: "snow",  icon: "❄️" } },
+    fog:   { temperature: 6,  rain: 0,   sky: { type: "fog",   icon: "🌫️" } },
+    storm: { temperature: 17, rain: 4,   sky: { type: "storm", icon: "⛈️" } }
+  };
+  let testSky = null;
+  const testButtons = app.querySelectorAll("[data-test-sky]");
+
+  testButtons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      const type = b.getAttribute("data-test-sky");
+      testSky = type === "live" ? null : type;
+      testButtons.forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+      if (testSky) {
+        button.textContent = "Hitta ett annat vin →";
+        showWine(TEST_WEATHER[testSky], true);
+      } else {
+        suggestWine();
+      }
+    });
+  });
+
   async function suggestWine() {
+    if (testSky) {
+      showWine(TEST_WEATHER[testSky], true);
+      return;
+    }
     const isFresh = cachedWeather && Date.now() - cachedAt < WEATHER_MAX_AGE;
 
     if (!isFresh) {
@@ -190,11 +230,12 @@
     };
   }
 
-  function showWine(current) {
+  function showWine(current, isTest) {
     const pick = pickWine(current.sky.type, current.temperature);
 
     const sv = function (n) { return n.toLocaleString("sv-SE"); };
-    weather.textContent = `${current.sky.icon} Stockholm · ${sv(current.temperature)} °C · Regn: ${sv(current.rain)} mm`;
+    const place = isTest ? "Testväder" : "Stockholm";
+    weather.textContent = `${current.sky.icon} ${place} · ${sv(current.temperature)} °C · Regn: ${sv(current.rain)} mm`;
     wine.textContent = pick.name;
     reason.textContent = pick.reason;
     showArt(current.sky.type, pick.color);
@@ -203,10 +244,14 @@
     app.classList.remove("sky-sun", "sky-cloud", "sky-rain", "sky-snow", "sky-fog", "sky-storm");
     app.classList.add("sky-" + current.sky.type);
 
-    // Resultatet tonar in, även när det bara är vinet som byts
-    result.classList.remove("show");
-    void result.offsetWidth;
-    result.classList.add("show");
+    // Resultatet tonar in första gången, sedan studsar bara vinnamnet
+    if (!result.classList.contains("show")) {
+      result.classList.add("show");
+    } else {
+      wine.classList.remove("pop");
+      void wine.offsetWidth;
+      wine.classList.add("pop");
+    }
 
     // dataLayer-event till GTM
     window.dataLayer.push({
@@ -215,7 +260,8 @@
       temperature: current.temperature,
       rain_mm: current.rain,
       weather_type: current.sky.type,
-      wine_color: pick.color
+      wine_color: pick.color,
+      test_weather: Boolean(isTest)
     });
   }
 
