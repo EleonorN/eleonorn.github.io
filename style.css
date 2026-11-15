@@ -156,49 +156,138 @@ body {
   margin: 0 auto;
 }
 
-.case-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
+/* Projektflödet: kort i olika höjd som staplas i kolumner, som ett Pinterest-flöde */
+.project-grid {
+  column-count: 3;
+  column-gap: 24px;
   margin-top: 32px;
 }
 
-.case-card {
+.project-card {
   display: block;
-  padding: 32px 28px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
+  break-inside: avoid;
+  margin-bottom: 24px;
+  background-color: var(--sand);
+  border-radius: 20px;
+  overflow: hidden;
   text-decoration: none;
   color: var(--ink);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.case-card:hover {
-  border-color: var(--ink);
-  transform: translateY(-2px);
+a.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(28, 27, 25, 0.08);
 }
 
-.case-title {
+a.project-card:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.project-visual {
+  padding: 32px 28px 8px;
+}
+
+.project-visual--photo img {
+  display: block;
+  width: 72%;
+  height: auto;
+  margin: 0 auto;
+  filter: drop-shadow(0 14px 24px rgba(28, 27, 25, 0.12));
+}
+
+.project-info {
+  padding: 20px 28px 28px;
+}
+
+.project-title {
   font-size: 1.25rem;
-  font-weight: 500;
-  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
 }
 
-.case-text {
-  color: var(--muted);
-  margin-bottom: 20px;
-}
-
-.case-meta {
+.project-meta {
   font-size: 0.8125rem;
   color: var(--muted);
-  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Glass-caset: en liten linje med riktig data */
+.project-visual--chart {
+  padding-top: 40px;
+}
+
+.mini-chart {
+  display: block;
+  width: 100%;
+  height: 120px;
+  margin: 12px 0;
+}
+
+.mini-chart polyline {
+  fill: none;
+  stroke: #4A7BD0;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.mini-label {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.mini-label--end {
+  text-align: right;
+}
+
+/* SEO-caset: ett litet sökresultat */
+.project-visual--serp {
+  padding-top: 40px;
+}
+
+.serp {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: 0 8px 20px rgba(28, 27, 25, 0.06);
+}
+
+.serp-query {
+  font-size: 0.8125rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 14px;
   margin-bottom: 16px;
 }
 
-.case-link {
-  font-size: 0.9375rem;
-  font-weight: 500;
+.serp-url {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.serp-title {
+  font-size: 1rem;
+  color: #1a4fb8;
+  line-height: 1.35;
+  margin: 2px 0 6px;
+}
+
+.serp-text {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+  .project-grid { column-count: 2; }
+}
+
+@media (max-width: 560px) {
+  .project-grid { column-count: 1; }
 }
 
 /* ============================================
@@ -332,4 +421,154 @@ body {
 
 .back-link:hover {
   color: var(--ink);
+}
+
+/* ============================================
+   VISUELL CASE-SIDA (Aroma Roast)
+   ============================================ */
+.article--visual {
+  max-width: 1040px;
+}
+
+/* Texten hålls smal, bilderna får hela bredden */
+.article--visual .article-head,
+.article--visual h2,
+.article--visual .step-label {
+  max-width: 680px;
+}
+
+/* Lista med en liten punkt framför varje rad */
+.chips {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.chips li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  font-size: 1.0625rem;
+}
+
+.chips li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--ink);
+}
+
+.funnel-step {
+  margin-top: 72px;
+}
+
+.article .step-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.funnel-step h2 {
+  margin-top: 6px;
+}
+
+.ad-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  align-items: end;
+  background-color: var(--sand);
+  border-radius: 20px;
+  padding: 40px 32px;
+}
+
+.ad-row--two {
+  grid-template-columns: repeat(2, minmax(0, 240px));
+  justify-content: center;
+  gap: 48px;
+}
+
+.ad img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 12px 20px rgba(28, 27, 25, 0.12));
+}
+
+.ad figcaption {
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+.photo-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.photo-row img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stats div {
+  background-color: var(--sand);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.stats dt {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.stats dd {
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.best-ad {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  align-items: center;
+  background-color: var(--sand);
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.article .best-ad p {
+  margin: 0;
+  max-width: 360px;
+}
+
+@media (max-width: 800px) {
+  .ad-row { grid-template-columns: repeat(2, 1fr); padding: 28px 20px; }
+  .ad-row--two { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .photo-row { grid-template-columns: 1fr 1fr; }
+  .photo-row img:last-child { display: none; }
+}
+
+@media (max-width: 520px) {
+  .best-ad { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .best-ad .ad { max-width: 220px; }
 }

@@ -57,7 +57,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <link href="style.css" rel="stylesheet" />
+  <link href="style.css?v=4" rel="stylesheet" />
   <link href="api-weather-wine/style.css" rel="stylesheet" />
 </head>
 <body>
@@ -92,26 +92,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="section" id="work" aria-labelledby="work-title">
       <div class="container-wide">
         <h2 id="work-title">Tidigare projekt</h2>
-        <div class="case-grid">
+        <div class="project-grid">
 
-        <a class="case-card" href="glass-case.html">
-          <h3 class="case-title">Väderstyrd marknadsföring för glass</h3>
-          <p class="case-text">
-            Sök- och väderdata blev en produktidé för hösten, en innehållsplan
-            och en PR-vinkel för ett glassvarumärke.
-          </p>
-          <p class="case-meta">Google Trends · SMHI · Chart.js · 2026</p>
-          <span class="case-link">Läs caset →</span>
-        </a>
+          <a class="project-card" href="aroma-roast.html">
+            <div class="project-visual project-visual--photo">
+              <img src="bilder/aroma-roast/annons-awareness-gravidmage.webp"
+                   alt="Facebook-annons för Aroma Roast: en gravid mage och en påse koffeinfritt kaffe under rubriken Hittat din nya gravid-craving?"
+                   width="424" height="862" loading="lazy">
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Aroma Roast</h3>
+              <p class="project-meta">Meta-annonser · Koffeinfritt kaffe för gravida</p>
+            </div>
+          </a>
 
-          <a class="case-card" href="seo-case.html">
-            <h3 class="case-title">SEO för en e-handel inom ridsport</h3>
-            <p class="case-text">
-              Sökordsanalys och on-page-optimering av en produktsida för
-              elastiska träningsband för häst.
-            </p>
-            <p class="case-meta">Ahrefs · SEO-granskning · 2025</p>
-            <span class="case-link">Läs caset →</span>
+          <a class="project-card" href="glass-case.html">
+            <div class="project-visual project-visual--chart" aria-hidden="true">
+              <p class="mini-label">Sökintresse för "glass", 2021–2026</p>
+              <svg viewBox="0 0 280 120" preserveAspectRatio="none" class="mini-chart">
+                <polyline points="0.0,91.2 5.0,97.7 10.0,101.6 15.0,95.1 20.0,87.3 25.0,86.0 30.0,84.7 35.0,73.0 40.0,62.6 45.0,40.5 50.0,36.6 55.0,56.1 60.0,91.2 65.0,96.4 70.0,96.4 75.0,76.9 80.0,79.5 85.0,88.6 90.0,86.0 95.0,65.2 100.0,49.6 105.0,32.7 110.0,28.8 115.0,67.8 120.0,83.4 125.0,92.5 130.0,95.1 135.0,89.9 140.0,88.6 145.0,86.0 150.0,78.2 155.0,65.2 160.0,34.0 165.0,40.5 170.0,24.9 175.0,53.5 180.0,80.8 185.0,92.5 190.0,91.2 195.0,86.0 200.0,83.4 205.0,82.1 210.0,76.9 215.0,54.8 220.0,50.9 225.0,31.4 230.0,8.0 235.0,56.1 240.0,76.9 245.0,87.3 250.0,88.6 255.0,75.6 260.0,70.4 265.0,62.6 270.0,69.1 275.0,44.4 280.0,31.4" />
+              </svg>
+              <p class="mini-label mini-label--end">Toppar varje juli</p>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">Väderstyrd marknadsföring för glass</h3>
+              <p class="project-meta">Dataanalys · Google Trends · SMHI</p>
+            </div>
+          </a>
+
+          <a class="project-card" href="seo-case.html">
+            <div class="project-visual project-visual--serp" aria-hidden="true">
+              <div class="serp">
+                <p class="serp-query">träningsband för häst</p>
+                <p class="serp-url">Butiken › Träningsband</p>
+                <p class="serp-title">Träningsband för häst med schabrak – Komplett set</p>
+                <p class="serp-text">Elastiskt träningsband som hjälper hästen att arbeta med ryggen…</p>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">SEO för en e-handel inom ridsport</h3>
+              <p class="project-meta">Sökordsanalys · On-page-SEO</p>
+            </div>
           </a>
 
         </div>
