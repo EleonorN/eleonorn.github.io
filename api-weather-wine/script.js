@@ -10,6 +10,7 @@
 
   window.dataLayer = window.dataLayer || [];
 
+
   // Illustrationerna: druvor från början, sedan väder och vin
   const art = app.querySelector(".wine-art");
   const grapes = art && art.querySelector(".wine-art-grapes");
@@ -115,14 +116,14 @@
   // Kommer ihåg senaste vinet så att Försök igen ger något nytt
   let lastWine = null;
 
-  // Översätter Open-Meteos väderkod till en vädertyp och en ikon
+  // Översätter Open-Meteos väderkod till en vädertyp
   function getSky(code, rain) {
-    if (code >= 95) return { type: "storm", icon: "⛈️" };
-    if ((code >= 71 && code <= 77) || code === 85 || code === 86) return { type: "snow", icon: "❄️" };
-    if (rain > 0 || (code >= 51 && code <= 67) || (code >= 80 && code <= 82)) return { type: "rain", icon: "🌧️" };
-    if (code === 45 || code === 48) return { type: "fog", icon: "🌫️" };
-    if (code === 0 || code === 1) return { type: "sun", icon: "☀️" };
-    return { type: "cloud", icon: "☁️" };
+    if (code >= 95) return { type: "storm" };
+    if ((code >= 71 && code <= 77) || code === 85 || code === 86) return { type: "snow" };
+    if (rain > 0 || (code >= 51 && code <= 67) || (code >= 80 && code <= 82)) return { type: "rain" };
+    if (code === 45 || code === 48) return { type: "fog" };
+    if (code === 0 || code === 1) return { type: "sun" };
+    return { type: "cloud" };
   }
 
   // Väljer ett vin som matchar väder och temperatur, helst inte samma som förra gången
@@ -162,21 +163,19 @@
 
   // Testa ett annat väder: påhittat väder så att man kan se alla illustrationer
   const TEST_WEATHER = {
-    sun:   { temperature: 22, rain: 0,   sky: { type: "sun",   icon: "☀️" } },
-    cloud: { temperature: 14, rain: 0,   sky: { type: "cloud", icon: "☁️" } },
-    rain:  { temperature: 9,  rain: 1.5, sky: { type: "rain",  icon: "🌧️" } },
-    snow:  { temperature: -3, rain: 0,   sky: { type: "snow",  icon: "❄️" } },
-    fog:   { temperature: 6,  rain: 0,   sky: { type: "fog",   icon: "🌫️" } },
-    storm: { temperature: 17, rain: 4,   sky: { type: "storm", icon: "⛈️" } }
+    sun:   { temperature: 22, rain: 0,   sky: { type: "sun" } },
+    cloud: { temperature: 14, rain: 0,   sky: { type: "cloud" } },
+    rain:  { temperature: 9,  rain: 1.5, sky: { type: "rain" } },
+    snow:  { temperature: -3, rain: 0,   sky: { type: "snow" } },
+    fog:   { temperature: 6,  rain: 0,   sky: { type: "fog" } },
+    storm: { temperature: 17, rain: 4,   sky: { type: "storm" } }
   };
   let testSky = null;
-  const testButtons = app.querySelectorAll("[data-test-sky]");
+  const testSelect = document.getElementById("testSky");
 
-  testButtons.forEach(function (b) {
-    b.addEventListener("click", function () {
-      const type = b.getAttribute("data-test-sky");
-      testSky = type === "live" ? null : type;
-      testButtons.forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+  if (testSelect) {
+    testSelect.addEventListener("change", function () {
+      testSky = testSelect.value === "live" ? null : testSelect.value;
       if (testSky) {
         button.textContent = "Hitta ett annat vin →";
         showWine(TEST_WEATHER[testSky], true);
@@ -184,7 +183,7 @@
         suggestWine();
       }
     });
-  });
+  }
 
   async function suggestWine() {
     if (testSky) {
@@ -235,7 +234,7 @@
 
     const sv = function (n) { return n.toLocaleString("sv-SE"); };
     const place = isTest ? "Testväder" : "Stockholm";
-    weather.textContent = `${current.sky.icon} ${place} · ${sv(current.temperature)} °C · Regn: ${sv(current.rain)} mm`;
+    weather.textContent = `${place} · ${sv(current.temperature)} °C · Regn: ${sv(current.rain)} mm`;
     wine.textContent = pick.name;
     reason.textContent = pick.reason;
     showArt(current.sky.type, pick.color);

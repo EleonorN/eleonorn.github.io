@@ -41,7 +41,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../style.css?v=11">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 
    <body class="wine-page">
@@ -64,34 +64,40 @@
   <main class="wine-app">
     <div class="wine-app-inner">
 
-      <div class="wine-art">
-        <img class="wine-art-grapes" src="bilder/druvor.webp" alt="Illustration av en vindruvsklase" width="377" height="480">
-        <img class="wine-art-sky" src="bilder/sol.webp" alt="" width="480" height="460" hidden>
-        <img class="wine-art-wine" src="bilder/vin-rott.webp" alt="" width="253" height="480" hidden>
-      </div>
       <p class="eyebrow">VÄDER × VIN</p>
-
-      <h1>Vilket vin blir<br> det i dag?</h1>
-
+      <h1 class="app-title">Vilket vin blir<br> det i dag?</h1>
       <p class="intro">Låt vädret bestämma.</p>
 
-      <button id="wineButton" type="button">Hitta mitt vin →</button>
-      <div class="test-sky" role="group" aria-label="Testa ett annat väder">
-        <p class="test-sky-label">Eller testa ett annat väder:</p>
-        <button type="button" data-test-sky="sun" aria-pressed="false">☀️ Sol</button>
-        <button type="button" data-test-sky="cloud" aria-pressed="false">☁️ Moln</button>
-        <button type="button" data-test-sky="rain" aria-pressed="false">🌧️ Regn</button>
-        <button type="button" data-test-sky="snow" aria-pressed="false">❄️ Snö</button>
-        <button type="button" data-test-sky="fog" aria-pressed="false">🌫️ Dimma</button>
-        <button type="button" data-test-sky="storm" aria-pressed="false">⛈️ Åska</button>
-        <button type="button" data-test-sky="live" aria-pressed="false">📍 Stockholm nu</button>
+      <!-- Illustrationen och svaret hör ihop -->
+      <div class="wine-answer">
+        <div class="wine-art">
+          <img class="wine-art-grapes" src="bilder/druvor.webp" alt="Illustration av en vindruvsklase" width="377" height="480">
+          <img class="wine-art-sky" src="bilder/sol.webp" alt="" width="480" height="460" hidden>
+          <img class="wine-art-wine" src="bilder/vin-rott.webp" alt="" width="253" height="480" hidden>
+        </div>
+        <div id="result" class="result" aria-live="polite">
+          <p id="wine" class="wine-name"></p>
+          <p id="reason"></p>
+          <p id="weather"></p>
+        </div>
       </div>
 
-      <div id="result" class="result" aria-live="polite">
-        <p id="weather"></p>
-        <p id="wine" class="wine-name"></p>
-        <p id="reason"></p>
-      </div>
+      <button id="wineButton" type="button">Hitta mitt vin →</button>
+
+      <label class="test-sky">
+        <span>Testa ett annat väder</span>
+        <span class="test-sky-field">
+          <select id="testSky">
+            <option value="live">Vädret i Stockholm just nu</option>
+            <option value="sun">Sol</option>
+            <option value="cloud">Moln</option>
+            <option value="rain">Regn</option>
+            <option value="snow">Snö</option>
+            <option value="fog">Dimma</option>
+            <option value="storm">Åska</option>
+          </select>
+        </span>
+      </label>
 
       <a href="../index.html" class="back-link">← Tillbaka till startsidan</a>
 
@@ -110,6 +116,6 @@
     <p class="footer-copy">© 2026 Eleonor Norrman</p>
   </footer>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>

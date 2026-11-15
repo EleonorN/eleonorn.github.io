@@ -218,40 +218,98 @@ body.wine-page .wine-app-inner {
 }
 
 /* ============================================
-   TESTA ETT ANNAT VÄDER
+   SVARET VID ILLUSTRATIONEN
+   ============================================ */
+.wine-answer {
+  margin: 32px 0 28px;
+}
+
+.wine-answer .wine-art {
+  margin-bottom: 16px;
+}
+
+.wine-app .wine-answer .result {
+  margin-top: 0;
+}
+
+/* Tomt resultat tar ingen plats innan första förslaget */
+.wine-app .result:not(.show) {
+  display: none;
+}
+
+.wine-app .wine-answer #wine {
+  margin: 0 0 6px;
+}
+
+.wine-app .wine-answer #reason {
+  margin: 0 0 10px;
+}
+
+.wine-app .wine-answer #weather {
+  font-size: 14px;
+  color: #8a7f76;
+  margin: 0;
+}
+
+/* ============================================
+   TESTA ETT ANNAT VÄDER (rullista längst ner)
    ============================================ */
 .test-sky {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 8px;
-  margin-top: 24px;
-}
-
-.wine-app .test-sky-label {
-  width: 100%;
+  margin-top: 36px;
   font-size: 14px;
   color: #8a7f76;
-  margin: 0 0 4px;
 }
 
-.wine-app .test-sky button {
-  background: rgba(255, 255, 255, 0.6);
-  color: #1f1a17;
-  border: 1px solid rgba(31, 26, 23, 0.15);
-  padding: 7px 14px;
+.test-sky select {
+  font: inherit;
   font-size: 14px;
-  font-weight: 400;
+  color: #1f1a17;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(31, 26, 23, 0.18);
+  border-radius: 999px;
+  padding: 9px 36px 9px 16px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231f1a17' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  cursor: pointer;
 }
 
-.wine-app .test-sky button:hover {
-  opacity: 1;
-  background: #fff;
+.test-sky select:focus-visible {
+  outline: 2px solid #1f1a17;
+  outline-offset: 2px;
 }
 
-.wine-app .test-sky button[aria-pressed="true"] {
-  background: #1f1a17;
-  color: #f4f0eb;
-  border-color: #1f1a17;
+/* Svaret tonar in första gången (display: none gör att transition inte räcker) */
+.wine-app .result.show {
+  animation: result-in 0.5s ease;
+}
+
+@keyframes result-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wine-app .result.show { animation: none; }
+}
+
+/* Testväder utanför demorutan, så att det syns att det inte hör till appen */
+.test-sky--outside {
+  margin-top: 20px;
+  color: #6b655e;
+}
+
+.test-sky--outside select {
+  background-color: #fff;
+}
+
+/* Rullistan i ett omslag (utan ikon) */
+.test-sky-field {
+  display: inline-flex;
 }
 
