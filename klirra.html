@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-N62HQMMN');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Klirra: bolåneansökan för förstagångsköpare – Eleonor Norrman</title>
+  <meta name="description" content="UX/UI-design av en bolåneansökan för en påhittad bank, gjord så enkel som möjligt för unga som köper sin första bostad. Progressbar, korta videor och tydliga nästa steg.">
+  <link rel="canonical" href="https://eleonorn.github.io/klirra.html">
+  <meta name="author" content="Eleonor Norrman">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:site_name" content="Eleonor Norrman">
+  <meta property="og:title" content="Klirra: bolåneansökan för förstagångsköpare – Eleonor Norrman">
+  <meta property="og:description" content="UX/UI-design av en bolåneansökan för en påhittad bank, gjord så enkel som möjligt för unga som köper sin första bostad. Progressbar, korta videor och tydliga nästa steg.">
+  <meta property="og:url" content="https://eleonorn.github.io/klirra.html">
+  <meta property="og:image" content="https://eleonorn.github.io/bilder/klirra/ansokan-steg1.webp">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Klirra: bolåneansökan för förstagångsköpare",
+    "description": "UX/UI-design av en bolåneansökan för en påhittad bank, gjord så enkel som möjligt för unga som köper sin första bostad. Progressbar, korta videor och tydliga nästa steg.",
+    "url": "https://eleonorn.github.io/klirra.html",
+    "image": "https://eleonorn.github.io/bilder/klirra/ansokan-steg1.webp",
+    "inLanguage": "sv-SE",
+    "author": { "@type": "Person", "@id": "https://eleonorn.github.io/#person", "name": "Eleonor Norrman", "url": "https://eleonorn.github.io/" },
+    "isPartOf": { "@type": "WebSite", "@id": "https://eleonorn.github.io/#website" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link href="style.css?v=11" rel="stylesheet" />
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N62HQMMN"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <header class="nav-bar">
+    <nav class="nav" aria-label="Huvudmeny">
+      <a href="index.html" class="nav-name">Eleonor Norrman</a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Projekt</a></li>
+        <li><a href="index.html#about">Om mig</a></li>
+        <li><a href="index.html#contact" class="nav-contact">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+  <article class="article article--visual">
+
+    <header class="article-head">
+      <h1 class="article-title">Klirra</h1>
+      <p class="article-intro">
+        En bolåneansökan för en påhittad bank, gjord så enkel som möjligt
+        för den som köper sin första bostad och aldrig har ansökt om bolån.
+      </p>
+
+      <div class="article-meta">
+        <div><strong>Målgrupp</strong> Unga förstagångsköpare</div>
+        <div><strong>Uppgift</strong> Bolåneansökan i fyra steg</div>
+        <div><strong>Verktyg</strong> Figma</div>
+        <div><strong>Utbildning</strong> Digital Design &amp; Strategy</div>
+      </div>
+    </header>
+
+    <section class="proto-section" aria-labelledby="prototyp">
+      <h2 id="prototyp">Testa prototypen</h2>
+      <p class="lead">Klicka dig igenom ansökan som en förstagångsköpare. Inget du skriver sparas eller skickas.</p>
+
+      <div class="kl" id="klirra-proto">
+        <div class="kl-top">
+          <span class="kl-logo">Klirra</span>
+          <nav class="kl-nav" aria-label="Klirras meny (prototyp)">
+            <span class="is-active">Låna</span><span>Kort &amp; betala</span><span>Spara</span><span>Försäkra</span><span>Våra tips</span><span>Kundservice</span>
+          </nav>
+        </div>
+
+        <div class="kl-body">
+          <div class="kl-intro" data-hide-on-done>
+            <h3 class="kl-h1">Ansök om bolån</h3>
+            <p>Drömmer du om din första lägenhet? Se hur mycket du kan låna på bara några minuter.</p>
+          </div>
+
+          <div class="kl-card" data-hide-on-done>
+            <ol class="kl-progress" aria-label="Steg i ansökan">
+              <li class="is-current"><span class="kl-num">1</span><span class="kl-name">Bostaden</span></li>
+              <li><span class="kl-num">2</span><span class="kl-name">Ekonomi</span></li>
+              <li><span class="kl-num">3</span><span class="kl-name">Låntagare</span></li>
+              <li><span class="kl-num">4</span><span class="kl-name">Sammanfattning</span></li>
+            </ol>
+
+            <form class="kl-form" novalidate>
+              <fieldset class="kl-step" data-step="1">
+                <legend class="kl-h2">Bostaden</legend>
+                <p class="kl-sub">Berätta lite om bostaden du kikat på.</p>
+                <p class="kl-label">Vilken typ av bostad?</p>
+                <div class="kl-chips">
+                  <label><input type="radio" name="typ" value="Lägenhet" checked><span>Lägenhet<svg class="kl-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><path fill="currentColor" d="M240 208h-8V72a8 8 0 0 0-8-8h-40V40a8 8 0 0 0-8-8H80a8 8 0 0 0-8 8v56H32a8 8 0 0 0-8 8v104h-8a8 8 0 0 0 0 16h224a8 8 0 0 0 0-16M40 112h40a8 8 0 0 0 8-8V48h80v24a8 8 0 0 0 8 8h40v128h-64v-40a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v40H40Zm96 96h-16v-32h16ZM112 72a8 8 0 0 1 8-8h16a8 8 0 0 1 0 16h-16a8 8 0 0 1-8-8m0 32a8 8 0 0 1 8-8h16a8 8 0 0 1 0 16h-16a8 8 0 0 1-8-8m56 0a8 8 0 0 1 8-8h16a8 8 0 0 1 0 16h-16a8 8 0 0 1-8-8m-80 32a8 8 0 0 1-8 8H64a8 8 0 0 1 0-16h16a8 8 0 0 1 8 8m0 32a8 8 0 0 1-8 8H64a8 8 0 0 1 0-16h16a8 8 0 0 1 8 8m24-32a8 8 0 0 1 8-8h16a8 8 0 0 1 0 16h-16a8 8 0 0 1-8-8m56 0a8 8 0 0 1 8-8h16a8 8 0 0 1 0 16h-16a8 8 0 0 1-8-8m0 32a8 8 0 0 1 8-8h16a8 8 0 0 1 0 16h-16a8 8 0 0 1-8-8"/></svg></span></label>
+                  <label><input type="radio" name="typ" value="Villa"><span>Villa<svg class="kl-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="m1.5 10.002l5.5-6m0 0l4.311 4.703c.586.639.879.958 1.264 1.128c.384.169.818.169 1.685.169h8.24l-4.311-4.703c-.586-.639-.879-.958-1.264-1.128c-.384-.17-.818-.17-1.685-.17zM11 8.5V20H7c-1.886 0-2.828 0-3.414-.586S3 17.885 3 16V8.5"/><path d="M11 20h6c1.886 0 2.828 0 3.414-.586S21 17.885 21 16v-6M4 7V4m3.125 7.25H7m.25 0a.25.25 0 1 1-.5 0a.25.25 0 0 1 .5 0M7 20v-4m8-2h2"/></g></svg></span></label>
+                  <label><input type="radio" name="typ" value="Fritidshus"><span>Fritidshus<svg class="kl-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="m7 9l4.77-4.265C13.066 3.578 13.713 3 14.5 3s1.435.578 2.73 1.735L22 9M8.5 8v12m12 0V8"/><ellipse cx="3.5" cy="12" rx="1.5" ry="2"/><path stroke-linecap="round" d="M3.5 14v6"/><path stroke-linecap="round" stroke-linejoin="round" d="M2 20h20m-10 0v-4c0-.943 0-1.414.293-1.707S13.057 14 14 14h1c.943 0 1.414 0 1.707.293S17 15.057 17 16v4m-3.5-9h2m-2-3h2"/></g></svg></span></label>
+                </div>
+                <label class="kl-field"><span class="kl-label">Vad är bostadens värde?</span>
+                  <span class="kl-input"><input name="varde" inputmode="numeric" placeholder="Ex. 3 000 000"><em>kr</em></span></label>
+                <label class="kl-field"><span class="kl-label">Hur mycket vill du låna?</span>
+                  <span class="kl-input"><input name="lan" inputmode="numeric" placeholder="Ex. 2 000 000"><em>kr</em></span></label>
+                <label class="kl-field"><span class="kl-label">Bostadens adress?</span>
+                  <span class="kl-input"><input name="adress" placeholder="Sök adress"></span></label>
+                <label class="kl-field"><span class="kl-label">Ungefärlig månadsavgift</span>
+                  <span class="kl-input"><input name="avgift" inputmode="numeric" placeholder="Ex. 2 500"><em>kr/mån</em></span></label>
+              </fieldset>
+
+              <fieldset class="kl-step" data-step="2" hidden>
+                <legend class="kl-h2">Ekonomi</legend>
+                <p class="kl-sub">Här får du koll på hur din ekonomi påverkar lånet.</p>
+                <label class="kl-field"><span class="kl-label">Vad har du för sysselsättning?</span>
+                  <span class="kl-input"><select name="syssla">
+                    <option value="">Välj ett alternativ</option>
+                    <option>Tillsvidareanställd</option><option>Visstidsanställd</option><option>Egen företagare</option><option>Student</option>
+                  </select></span></label>
+                <label class="kl-field"><span class="kl-label">Vad är din månadsinkomst, före skatt?</span>
+                  <span class="kl-input"><input name="inkomst" inputmode="numeric" placeholder="Ex. 25 000"><em>kr/mån</em></span></label>
+                <label class="kl-field"><span class="kl-label">Hur många vuxna kommer bo i hushållet?</span>
+                  <span class="kl-input"><input name="vuxna" inputmode="numeric" placeholder="Ex. 2"><em>vuxna</em></span></label>
+                <label class="kl-field"><span class="kl-label">Hur många barn kommer bo i hushållet?</span>
+                  <span class="kl-input"><input name="barn" inputmode="numeric" placeholder="Ex. 1"><em>barn</em></span></label>
+                <p class="kl-label">Har ni lån eller borgen, förutom bolån?</p>
+                <div class="kl-radios">
+                  <label><input type="radio" name="andralan" value="Ja"><span>Ja</span></label>
+                  <label><input type="radio" name="andralan" value="Nej" checked><span>Nej</span></label>
+                </div>
+              </fieldset>
+
+              <fieldset class="kl-step" data-step="3" hidden>
+                <legend class="kl-h2">Låntagare</legend>
+                <p class="kl-sub">Vem ska ta lånet?</p>
+                <div class="kl-two">
+                  <label class="kl-field"><span class="kl-label">Förnamn</span>
+                    <span class="kl-input"><input name="fornamn" autocomplete="off" placeholder="Förnamn"></span></label>
+                  <label class="kl-field"><span class="kl-label">Efternamn</span>
+                    <span class="kl-input"><input name="efternamn" autocomplete="off" placeholder="Efternamn"></span></label>
+                </div>
+                <label class="kl-field"><span class="kl-label">Vad har du för e-postadress?</span>
+                  <span class="kl-input"><input name="epost" type="email" autocomplete="off" placeholder="namn@epost.se"></span></label>
+                <p class="kl-label">Vad är din civilstatus?</p>
+                <div class="kl-radios">
+                  <label><input type="radio" name="civil" value="Ensamstående" checked><span>Ensamstående</span></label>
+                  <label><input type="radio" name="civil" value="Sambo"><span>Sambo</span></label>
+                  <label><input type="radio" name="civil" value="Gift"><span>Gift</span></label>
+                </div>
+                <p class="kl-label">Vill du ta lånet tillsammans med någon?</p>
+                <div class="kl-radios">
+                  <label><input type="radio" name="med" value="Ja"><span>Ja</span></label>
+                  <label><input type="radio" name="med" value="Nej" checked><span>Nej</span></label>
+                </div>
+              </fieldset>
+
+              <fieldset class="kl-step" data-step="4" hidden>
+                <legend class="kl-h2">Sammanfattning</legend>
+                <p class="kl-sub">Kolla att allt stämmer innan du skickar in.</p>
+                <dl class="kl-summary" aria-live="polite"></dl>
+                <label class="kl-check"><input type="checkbox" name="intyg">
+                  <span>Jag intygar att uppgifterna i ansökan är korrekta och godkänner att en kreditupplysning tas.</span></label>
+              </fieldset>
+
+              <div class="kl-actions">
+                <button type="button" class="kl-btn kl-btn--ghost" data-back hidden>‹ Tillbaka</button>
+                <button type="button" class="kl-btn" data-next>Fortsätt ›</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="kl-videos" data-hide-on-done>
+            <h4 class="kl-h3">Första bolånet? Vi visar hur!</h4>
+            <p class="kl-sub">Få snabb koll på allt du behöver veta om bolån.</p>
+            <div class="kl-video-row">
+              <button type="button" class="kl-video"><img src="bilder/klirra/video-ansoka.webp" alt="Video: Hur går det till att ansöka om bolån?" width="464" height="306" loading="lazy"></button>
+              <button type="button" class="kl-video"><img src="bilder/klirra/video-tips.webp" alt="Video: Tre smarta tips innan du köper bostad" width="464" height="306" loading="lazy"></button>
+              <button type="button" class="kl-video"><img src="bilder/klirra/video-anna.webp" alt="Video: Så köpte Anna sin första lägenhet" width="464" height="306" loading="lazy"></button>
+            </div>
+          </div>
+
+          <div class="kl-done" hidden>
+            <h3 class="kl-h1"><span class="kl-tick" aria-hidden="true">✓</span> Din ansökan är inskickad!</h3>
+            <div class="kl-card kl-next">
+              <h4 class="kl-h2">Vad händer nu?</h4>
+              <p>Ingen åtgärd krävs från dig just nu. Vi hör av oss!</p>
+              <ul>
+                <li>Vi granskar dina uppgifter och bostaden.</li>
+                <li>När allt är klart får du besked till din mail.</li>
+                <li>Vi kontaktar dig med nästa steg för utbetalningen.</li>
+              </ul>
+            </div>
+            <h4 class="kl-h3">Se hur nästa steg går till</h4>
+            <button type="button" class="kl-video kl-video--single"><img src="bilder/klirra/video-efter.webp" alt="Video: Vad händer efter ansökan?" width="464" height="306" loading="lazy"></button>
+            <p><button type="button" class="kl-btn kl-btn--ghost" data-restart>Börja om</button></p>
+          </div>
+
+          <p class="kl-toast" role="status" hidden>Här skulle videon spelas upp</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="funnel-step" aria-labelledby="progress">
+      <h2 id="progress">En progressbar som visar vägen</h2>
+      <p class="lead">Du ser hela tiden vilket steg du är på och vad du har kvar.</p>
+      <div class="progress-stack">
+        <img src="bilder/klirra/progress-steg1.webp" alt="Progressbar på steg 1 av 4: Bostaden" width="714" height="78" loading="lazy">
+        <img src="bilder/klirra/progress-steg2.webp" alt="Progressbar på steg 2 av 4: Ekonomi" width="714" height="78" loading="lazy">
+        <img src="bilder/klirra/progress-steg3.webp" alt="Progressbar på steg 3 av 4: Låntagare" width="714" height="78" loading="lazy">
+      </div>
+    </section>
+
+    <section class="funnel-step" aria-labelledby="steg">
+      <h2 id="steg">Ett steg i taget</h2>
+      <div class="ad-row form-row">
+        <figure class="ad">
+          <img class="screen" src="bilder/klirra/formular-steg1.webp" alt="Steg 1, Bostaden: typ av bostad, värde, lånebelopp, adress och månadsavgift" width="784" height="817" loading="lazy">
+          <figcaption>1 · Bostaden</figcaption>
+        </figure>
+        <figure class="ad">
+          <img class="screen" src="bilder/klirra/formular-steg2.webp" alt="Steg 2, Ekonomi: sysselsättning, inkomst, hushåll och andra lån" width="784" height="1004" loading="lazy">
+          <figcaption>2 · Ekonomi</figcaption>
+        </figure>
+        <figure class="ad">
+          <img class="screen" src="bilder/klirra/formular-steg3.webp" alt="Steg 3, Låntagare: namn, kontaktuppgifter, civilstatus och medlåntagare" width="784" height="1132" loading="lazy">
+          <figcaption>3 · Låntagare</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="funnel-step" aria-labelledby="videor">
+      <h2 id="videor">Korta videor för den som vill veta mer</h2>
+      <p class="lead">Om hur det går till att ta bolån och köpa bostad, direkt under formuläret.</p>
+      <img class="screen" src="bilder/klirra/videos.webp" alt="Tre videor: Hur går det till att ansöka om bolån?, Tre smarta tips innan du köper bostad och Så köpte Anna sin första lägenhet" width="1200" height="337" loading="lazy">
+    </section>
+
+    <section class="funnel-step" aria-labelledby="nasta">
+      <h2 id="nasta">Vad händer nu?</h2>
+      <p class="lead">Efter ansökan visar en video vad som händer härnäst, så att du vet vad du kan vänta dig.</p>
+      <figure class="done-shot">
+        <img class="screen" src="bilder/klirra/klart.webp" alt="Bekräftelsesidan: Din ansökan är inskickad, rutan Vad händer nu? och videon Vad händer efter ansökan?" width="890" height="980" loading="lazy">
+      </figure>
+    </section>
+
+    <a href="index.html#work" class="back-link">← Tillbaka till projekt</a>
+
+  </article>
+  </main>
+
+  <footer class="footer" id="contact">
+    <h2 class="footer-title">Hör av dig</h2>
+    <ul class="footer-links">
+      <li><a href="https://www.linkedin.com/in/eleonor-norrman-473b78100/"
+             target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="mailto:eleonor.norrman@gmail.com">E-post</a></li>
+      <li><a href="https://github.com/EleonorN"
+             target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 Eleonor Norrman</p>
+  </footer>
+
+
+  <script>
+  /* Klickbar prototyp av Klirras bolåneansökan */
+  (function () {
+    var root = document.getElementById('klirra-proto');
+    if (!root) return;
+    var steps = root.querySelectorAll('.kl-step');
+    var progress = root.querySelectorAll('.kl-progress li');
+    var back = root.querySelector('[data-back]');
+    var next = root.querySelector('[data-next]');
+    var form = root.querySelector('.kl-form');
+    var toast = root.querySelector('.kl-toast');
+    var current = 1;
+
+    function val(name) {
+      var el = form.elements[name];
+      if (!el) return '';
+      var v = (el.value || '').trim();
+      return v;
+    }
+    function kr(v, unit) { return v ? v.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ' + unit : '–'; }
+
+    function fillSummary() {
+      var rows = [
+        ['Bostadstyp', val('typ')],
+        ['Bostadens värde', kr(val('varde').replace(/\s/g, ''), 'kr')],
+        ['Lånebelopp', kr(val('lan').replace(/\s/g, ''), 'kr')],
+        ['Adress', val('adress') || '–'],
+        ['Sysselsättning', val('syssla') || '–'],
+        ['Månadsinkomst', kr(val('inkomst').replace(/\s/g, ''), 'kr')],
+        ['Namn', ((val('fornamn') + ' ' + val('efternamn')).trim()) || '–'],
+        ['Civilstatus', val('civil')],
+        ['Medlåntagare', val('med')]
+      ];
+      var dl = root.querySelector('.kl-summary');
+      dl.innerHTML = '';
+      rows.forEach(function (r) {
+        var dt = document.createElement('dt'); dt.textContent = r[0];
+        var dd = document.createElement('dd'); dd.textContent = r[1];
+        dl.appendChild(dt); dl.appendChild(dd);
+      });
+    }
+
+    function show(n) {
+      current = n;
+      steps.forEach(function (s) { s.hidden = Number(s.dataset.step) !== n; });
+      progress.forEach(function (li, i) {
+        li.classList.toggle('is-done', i + 1 < n);
+        li.classList.toggle('is-current', i + 1 === n);
+        if (i + 1 === n) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
+      });
+      back.hidden = n === 1;
+      next.textContent = n === 4 ? 'Signera ansökan' : 'Fortsätt ›';
+      if (n === 4) { fillSummary(); next.disabled = !form.elements.intyg.checked; } else { next.disabled = false; }
+    }
+
+    function done(isDone) {
+      root.querySelectorAll('[data-hide-on-done]').forEach(function (el) { el.hidden = isDone; });
+      root.querySelector('.kl-done').hidden = !isDone;
+    }
+
+    next.addEventListener('click', function () {
+      if (current < 4) { show(current + 1); }
+      else { done(true); }
+      root.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    back.addEventListener('click', function () { if (current > 1) show(current - 1); });
+    form.elements.intyg.addEventListener('change', function () { next.disabled = !this.checked; });
+    root.querySelector('[data-restart]').addEventListener('click', function () {
+      form.reset(); done(false); show(1);
+    });
+    root.querySelectorAll('.kl-video').forEach(function (b) {
+      b.addEventListener('click', function () {
+        toast.hidden = false;
+        clearTimeout(toast._t);
+        toast._t = setTimeout(function () { toast.hidden = true; }, 2600);
+      });
+    });
+    show(1);
+  })();
+  </script>
+</body>
+</html>

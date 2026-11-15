@@ -791,3 +791,503 @@ img.screen {
   box-shadow: 0 14px 24px rgba(28, 27, 25, 0.10);
 }
 
+/* ============================================
+   CASE-SIDA: Klirra
+   ============================================ */
+.hero-shot {
+  margin-top: 8px;
+}
+
+.article .lead {
+  color: var(--muted);
+  max-width: 680px;
+}
+
+.progress-stack {
+  display: grid;
+  gap: 12px;
+  max-width: 714px;
+  background-color: var(--sand);
+  border-radius: 20px;
+  padding: 28px;
+}
+
+.progress-stack img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 999px;
+}
+
+.form-row {
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+}
+
+.form-row img.screen {
+  filter: none;
+}
+
+.done-shot {
+  max-width: 560px;
+}
+
+@media (max-width: 800px) {
+  .form-row { grid-template-columns: 1fr; }
+  .progress-stack { padding: 16px; }
+}
+
+/* Bredare skärmbild i kortet, för datorbilder */
+.project-visual--wide img {
+  width: 88%;
+}
+
+/* ============================================
+   KLICKBAR PROTOTYP: Klirra
+   ============================================ */
+.proto-section {
+  margin-top: 8px;
+}
+
+.kl {
+  --kl-coral: #fa7a68;
+  --kl-coral-dark: #e8604d;
+  --kl-peach: #fdece3;
+  --kl-navy: #1d2747;
+  --kl-card: #fafaff;
+  --kl-line: #c9c9d6;
+  font-family: "Poppins", "Inter", sans-serif;
+  color: var(--kl-navy);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(28, 27, 25, 0.08);
+  scroll-margin-top: 90px;
+}
+
+.kl-top {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: var(--kl-peach);
+  padding: 14px 28px;
+}
+
+.kl-logo {
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.kl-nav {
+  display: flex;
+  gap: 28px;
+  font-size: 0.875rem;
+}
+
+.kl-nav .is-active {
+  border-bottom: 2px solid var(--kl-navy);
+}
+
+.kl-body {
+  position: relative;
+  padding: 36px 28px 40px;
+}
+
+.kl-intro,
+.kl-card,
+.kl-done {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kl .kl-h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin-bottom: 6px;
+}
+
+.kl .kl-h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  padding: 0;
+}
+
+.kl .kl-h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.kl p,
+.kl-sub {
+  font-size: 0.875rem;
+  margin: 0 0 16px;
+}
+
+.kl-card {
+  background: var(--kl-card);
+  border: 1px solid #e3e3ee;
+  border-radius: 20px;
+  padding: 28px 32px;
+  margin-top: 20px;
+}
+
+/* Progressbaren */
+.kl-progress {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--kl-peach);
+  border-radius: 999px;
+  margin: 0 0 24px;
+  overflow: hidden;
+  font-size: 0.8125rem;
+}
+
+.kl-progress li {
+  text-align: center;
+  padding: 9px 4px;
+  color: #5d5d6b;
+  transition: background-color 0.25s ease;
+}
+
+.kl-progress li.is-done {
+  background: var(--kl-coral);
+  color: #6b2b22;
+}
+
+.kl-progress li.is-current {
+  background: var(--kl-coral);
+  color: #000;
+  font-weight: 500;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
+}
+
+.kl-progress li.is-current:first-child {
+  border-radius: 999px 0 0 999px;
+}
+
+.kl-step {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.kl-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 14px 0 6px !important;
+}
+
+.kl-field {
+  display: block;
+}
+
+.kl-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--kl-line);
+  border-radius: 999px;
+  background: #fff;
+  padding: 0 18px;
+}
+
+.kl-input:focus-within {
+  border-color: var(--kl-navy);
+  box-shadow: 0 0 0 3px rgba(250, 122, 104, 0.25);
+}
+
+.kl-input input,
+.kl-input select {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 0.875rem;
+  padding: 9px 0;
+  color: var(--kl-navy);
+  outline: none;
+}
+
+.kl-input em {
+  font-style: normal;
+  font-size: 0.875rem;
+}
+
+.kl-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Val som ser ut som knappar */
+.kl-chips,
+.kl-radios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.kl-radios {
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+}
+
+.kl-chips label,
+.kl-radios label {
+  position: relative;
+  cursor: pointer;
+}
+
+.kl-chips input,
+.kl-radios input {
+  position: absolute;
+  opacity: 0;
+}
+
+.kl-chips span,
+.kl-radios span {
+  display: block;
+  border: 1px solid var(--kl-line);
+  border-radius: 999px;
+  background: #fff;
+  padding: 10px 16px;
+  font-size: 0.875rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.kl-radios span {
+  padding-left: 40px;
+}
+
+.kl-radios span::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--kl-line);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+}
+
+.kl-chips input:checked + span,
+.kl-radios input:checked + span {
+  border-color: var(--kl-coral);
+  background: var(--kl-peach);
+}
+
+.kl-radios input:checked + span::before {
+  border: 5px solid var(--kl-coral);
+}
+
+.kl-chips input:focus-visible + span,
+.kl-radios input:focus-visible + span {
+  outline: 2px solid var(--kl-navy);
+  outline-offset: 2px;
+}
+
+.kl-summary {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 24px;
+  font-size: 0.875rem;
+  margin: 8px 0 20px;
+}
+
+.kl-summary dt {
+  color: #5d5d6b;
+}
+
+.kl-check {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+.kl-check input {
+  margin-top: 3px;
+  accent-color: var(--kl-coral);
+}
+
+.kl-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.kl-actions [data-next] {
+  margin-left: auto;
+}
+
+.kl-btn {
+  font: inherit;
+  font-size: 0.875rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--kl-coral);
+  color: var(--kl-navy);
+  padding: 9px 22px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.kl-btn:hover {
+  background: var(--kl-coral-dark);
+}
+
+.kl-btn:active {
+  transform: scale(0.97);
+}
+
+.kl-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.kl-btn--ghost {
+  background: transparent;
+  border: 1px solid var(--kl-coral);
+}
+
+.kl-btn--ghost:hover {
+  background: var(--kl-peach);
+}
+
+.kl-btn:focus-visible {
+  outline: 2px solid var(--kl-navy);
+  outline-offset: 2px;
+}
+
+/* Videorna */
+.kl-videos {
+  margin-top: 40px;
+}
+
+.kl-video-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.kl-video {
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.kl-video:hover {
+  transform: translateY(-2px);
+}
+
+.kl-video img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.kl-video--single {
+  display: block;
+  max-width: 420px;
+  margin: 12px 0 24px;
+}
+
+.kl-done .kl-h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.kl-tick {
+  color: #6cc196;
+  font-size: 2.5rem;
+}
+
+.kl-next ul {
+  margin: 0 0 4px 18px;
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+.kl-next {
+  margin-bottom: 32px;
+}
+
+.kl-toast {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  background: var(--kl-navy);
+  color: #fff;
+  font-size: 0.8125rem !important;
+  border-radius: 999px;
+  padding: 8px 18px;
+  margin: 0 !important;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .kl-nav { display: none; }
+  .kl-body { padding: 24px 16px 32px; }
+  .kl-card { padding: 20px 16px; }
+  .kl-progress { font-size: 0.6875rem; }
+  .kl-progress li { padding: 8px 2px; }
+  .kl-chips { grid-template-columns: 1fr; }
+  .kl-two { grid-template-columns: 1fr; gap: 0; }
+  .kl-video-row { grid-template-columns: 1fr; }
+  .kl-toast { white-space: normal; width: calc(100% - 32px); text-align: center; }
+}
+
+/* Progressbaren i mobilen: nummer för stegen runt omkring, hela namnet på steget man är på */
+.kl-num {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .kl-progress { grid-template-columns: 1fr 1fr 1fr 1fr; font-size: 0.75rem; }
+  .kl-progress li:not(.is-current) .kl-name { display: none; }
+  .kl-progress li:not(.is-current) .kl-num { display: inline; }
+  .kl-progress li.is-current { grid-column: span 1; white-space: nowrap; }
+  .kl-progress:has(li:nth-child(4).is-current) { grid-template-columns: 1fr 1fr 1fr 2.2fr; }
+  .kl-progress:has(li:nth-child(3).is-current) { grid-template-columns: 1fr 1fr 2fr 1fr; }
+  .kl-progress:has(li:nth-child(2).is-current) { grid-template-columns: 1fr 2fr 1fr 1fr; }
+  .kl-progress:has(li:nth-child(1).is-current) { grid-template-columns: 2fr 1fr 1fr 1fr; }
+}
+
+/* Ikoner i valen för bostadstyp, som i Klirras design */
+.kl-chips span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 14px 8px 18px;
+}
+
+.kl-icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  color: var(--kl-navy);
+}
+
+/* Rutan "Vad händer nu?" lika bred som videon under */
+.kl-card.kl-next {
+  max-width: 420px;
+  margin-left: 0;
+  margin-right: 0;
+}
+

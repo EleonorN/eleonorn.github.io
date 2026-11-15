@@ -13,6 +13,7 @@
 - [Aroma Roast: Meta-annonser för gravida](https://eleonorn.github.io/aroma-roast.html): Meta-kampanj för koffeinfritt kaffe riktad till gravida 28–35 år; research, annonser, foto och Meta Ads Manager
 - [Byggalliansen: SEO och content för hantverkare](https://eleonorn.github.io/byggalliansen.html): intervjuer med hantverkare, sökordsanalys, video med grundaren, tydligare CTA och ny metadata för att få fler hantverksföretag att bli partners
 - [Rabalder: redesign av en e-handel](https://eleonorn.github.io/rabalder.html): analys och ny design av startsida och produktsida för dator och mobil, gjord i Figma
+- [Klirra: bolåneansökan för förstagångsköpare](https://eleonorn.github.io/klirra.html): UX/UI-design av en bolåneansökan i fyra steg med progressbar, förklarande videor och en tydlig bekräftelsesida
 - [Väderstyrd marknadsföring för glass](https://eleonorn.github.io/glass-case.html): Google Trends och SMHI-data blev en höstprodukt, innehållsplan och PR-vinkel (2026)
 - [SEO för en e-handel inom ridsport](https://eleonorn.github.io/seo-case.html): sökordsanalys och on-page-SEO för en produktsida (2025)
 
