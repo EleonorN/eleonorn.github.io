@@ -758,3 +758,36 @@ a.project-card:focus-visible {
 .article .serp-title { font-size: 1.125rem; margin: 4px 0 6px; }
 .article .serp-text { font-size: 0.875rem; }
 
+/* ============================================
+   CASE-SIDA: Rabalder
+   ============================================ */
+/* Skärmbilder får en tunn ram så att vita sidor syns mot bakgrunden */
+img.screen {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(28, 27, 25, 0.06);
+}
+
+.change-list {
+  margin-top: 24px;
+}
+
+.phone-row img.screen {
+  border-radius: 16px;
+  filter: none;
+}
+
+/* Kortet på startsidan: mobilskärm med rundade hörn */
+.project-visual--screen img {
+  display: block;
+  width: 64%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  box-shadow: 0 14px 24px rgba(28, 27, 25, 0.10);
+}
+
