@@ -1543,3 +1543,24 @@ a.project-card:focus-visible .project-visual > * {
 .hero--split .hero-text {
   border-bottom: 1px solid var(--line);
 }
+
+/* Mindre luft mellan sektionerna på mobil */
+@media (max-width: 560px) {
+  .section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  #work {
+    padding-bottom: 16px;
+  }
+
+  .section.try-it {
+    padding-top: 32px;
+    padding-bottom: 24px;
+  }
+
+  #berghs {
+    padding-top: 32px;
+  }
+}
