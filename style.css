@@ -1591,3 +1591,13 @@ a.project-card:focus-visible .project-visual > * {
 .article--visual .funnel-step > p {
   max-width: 680px;
 }
+
+/* Videorna med grundaren på Byggalliansen-sidan */
+.video-still video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  background: #000;
+}
+
