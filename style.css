@@ -1426,3 +1426,24 @@ a.project-card:focus-visible .project-visual > * {
   }
 }
 
+/* ============================================
+   RUBRIKER I BIG CASLON
+   Big Caslon finns på Mac och iPhone. Andra får Libre Caslon Display,
+   en fri Caslon-tolkning från Google Fonts som ser nästan likadan ut.
+   ============================================ */
+:root {
+  --font-heading: "Big Caslon", "Libre Caslon Display", Georgia, serif;
+}
+
+.hero-title,
+.section h2,
+.article-title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+}
+
