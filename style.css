@@ -1578,3 +1578,11 @@ a.project-card:focus-visible .project-visual > * {
     padding-top: 32px;
   }
 }
+
+/* Liten rubrik ovanför Före/Förslag-rutorna */
+.article .compare-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 40px 0 -16px;
+}
+
