@@ -1586,3 +1586,8 @@ a.project-card:focus-visible .project-visual > * {
   margin: 40px 0 -16px;
 }
 
+
+/* Löptext på de visuella case-sidorna hålls lika smal som ingressen */
+.article--visual .funnel-step > p {
+  max-width: 680px;
+}
