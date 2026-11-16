@@ -1544,6 +1544,20 @@ a.project-card:focus-visible .project-visual > * {
   border-bottom: 1px solid var(--line);
 }
 
+/* Lite mindre luft mellan sektionerna på dator */
+#work {
+  padding-bottom: 48px;
+}
+
+.section.try-it {
+  padding-top: 48px;
+  padding-bottom: 40px;
+}
+
+#berghs {
+  padding-top: 56px;
+}
+
 /* Mindre luft mellan sektionerna på mobil */
 @media (max-width: 560px) {
   .section {
